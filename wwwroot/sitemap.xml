@@ -1,0 +1,90 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
+        xmlns:xhtml="http://www.w3.org/1999/xhtml"
+        xmlns:image="http://www.google.com/schemas/sitemap-image/1.1">
+
+  <!-- ================= ANA SAYFA ================= -->
+
+  <url>
+    <loc>https://marmarahijyen.com/</loc>
+    <lastmod>2025-12-28</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>1.0</priority>
+    <xhtml:link rel="alternate" hreflang="tr" href="https://marmarahijyen.com/" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://marmarahijyen.com/en/" />
+    <xhtml:link rel="alternate" hreflang="zh" href="https://marmarahijyen.com/zh/" />
+    <xhtml:link rel="alternate" hreflang="ru" href="https://marmarahijyen.com/ru/" />
+    <xhtml:link rel="alternate" hreflang="ar" href="https://marmarahijyen.com/ar/" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://marmarahijyen.com/" />
+  </url>
+
+  <!-- ================= PRODUCTS ================= -->
+
+  <url>
+    <loc>https://marmarahijyen.com/Products</loc>
+    <lastmod>2025-12-28</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.9</priority>
+    <xhtml:link rel="alternate" hreflang="tr" href="https://marmarahijyen.com/Products" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://marmarahijyen.com/en/Products" />
+    <xhtml:link rel="alternate" hreflang="zh" href="https://marmarahijyen.com/zh/Products" />
+    <xhtml:link rel="alternate" hreflang="ru" href="https://marmarahijyen.com/ru/Products" />
+    <xhtml:link rel="alternate" hreflang="ar" href="https://marmarahijyen.com/ar/Products" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://marmarahijyen.com/Products" />
+
+    <image:image>
+      <image:loc>https://marmarahijyen.com/Image/11.png</image:loc>
+      <image:title>Underpad Serme Örtü - MyFix</image:title>
+      <image:caption>Yüksek emicili hasta bakım örtüsü</image:caption>
+    </image:image>
+
+    <image:image>
+      <image:loc>https://marmarahijyen.com/Image/1.png</image:loc>
+      <image:title>Hasta Altı Bezi Bağlamalı - MyFix</image:title>
+      <image:caption>S M L XL beden seçenekleri</image:caption>
+    </image:image>
+
+    <image:image>
+      <image:loc>https://marmarahijyen.com/Image/16.png</image:loc>
+      <image:title>Vücut Temizleme Mendili - CleanPad</image:title>
+      <image:caption>Hijyenik ve pratik temizlik</image:caption>
+    </image:image>
+
+    <image:image>
+      <image:loc>https://marmarahijyen.com/Image/13.png</image:loc>
+      <image:title>Hasta Altı Bezi - CleanPad</image:title>
+      <image:caption>Yüksek emicilikli hasta altı bezi</image:caption>
+    </image:image>
+  </url>
+
+  <!-- ================= ABOUT ================= -->
+
+  <url>
+    <loc>https://marmarahijyen.com/About</loc>
+    <lastmod>2025-12-28</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+    <xhtml:link rel="alternate" hreflang="tr" href="https://marmarahijyen.com/About" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://marmarahijyen.com/en/About" />
+    <xhtml:link rel="alternate" hreflang="zh" href="https://marmarahijyen.com/zh/About" />
+    <xhtml:link rel="alternate" hreflang="ru" href="https://marmarahijyen.com/ru/About" />
+    <xhtml:link rel="alternate" hreflang="ar" href="https://marmarahijyen.com/ar/About" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://marmarahijyen.com/About" />
+  </url>
+
+  <!-- ================= CONTACT ================= -->
+
+  <url>
+    <loc>https://marmarahijyen.com/Contact</loc>
+    <lastmod>2025-12-28</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+    <xhtml:link rel="alternate" hreflang="tr" href="https://marmarahijyen.com/Contact" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://marmarahijyen.com/en/Contact" />
+    <xhtml:link rel="alternate" hreflang="zh" href="https://marmarahijyen.com/zh/Contact" />
+    <xhtml:link rel="alternate" hreflang="ru" href="https://marmarahijyen.com/ru/Contact" />
+    <xhtml:link rel="alternate" hreflang="ar" href="https://marmarahijyen.com/ar/Contact" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://marmarahijyen.com/Contact" />
+  </url>
+
+</urlset>

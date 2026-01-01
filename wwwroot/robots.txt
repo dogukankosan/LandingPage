@@ -1,0 +1,21 @@
+# Marmara Hijyen - robots.txt
+
+User-agent: *
+Disallow:
+
+Sitemap: https://www.marmarahijyen.com/sitemap.xml
+
+# Image botları
+User-agent: Googlebot-Image
+Allow: /Image/
+
+# Yandex için crawl limiti
+User-agent: Yandex
+Crawl-delay: 1
+
+# SEO analiz botları (isteğe bağlı)
+User-agent: AhrefsBot
+Disallow: /
+
+User-agent: SemrushBot
+Disallow: /

@@ -1,0 +1,854 @@
+﻿@{
+    // Aktif kültür
+    var culture = ViewBag.Culture?.ToString() ?? "tr";
+
+    // Mevcut path
+    var path = Context.Request.Path.ToString();
+
+    // Başlangıçtaki dil prefix'ini temizle (/en, /ru, /ar vs)
+    var cleanPath = path;
+
+if (culture != "tr" && path.StartsWith($"/{culture}"))
+{
+    cleanPath = path.Substring(culture.Length + 1);
+    if (string.IsNullOrEmpty(cleanPath))
+    {
+        cleanPath = "/";
+    }
+}
+
+// slash normalize
+cleanPath = cleanPath.StartsWith("/") ? cleanPath : "/" + cleanPath;
+
+    // Canonical base
+    var canonicalBase = culture == "tr"
+        ? "https://www.marmarahijyen.com"
+        : $"https://www.marmarahijyen.com/{culture}";
+
+    // Final canonical URL
+    var fullUrl = $"{canonicalBase}{cleanPath}";
+
+    // Aktif dil adı
+    var currentLang = culture switch
+    {
+        "en" => "English",
+        "zh" => "中文",
+        "ru" => "Русский",
+        "ar" => "العربية",
+        _ => "Türkçe"
+    };
+
+    // Bayrak
+    var currentFlag = culture switch
+    {
+        "en" => "🇬🇧",
+        "zh" => "🇨🇳",
+        "ru" => "🇷🇺",
+        "ar" => "🇸🇦",
+        _ => "🇹🇷"
+    };
+}
+
+
+<!DOCTYPE html>
+<html lang="@culture" dir="@(culture == "ar" ? "rtl" : "ltr")">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- SEO Meta Tags -->
+    <title>@ViewData["Title"] - Marmara Hijyen</title>
+    <meta name="description" content="@ViewData["Description"]">
+    <meta name="keywords" content="@ViewData["Keywords"]">
+    <meta name="author" content="Marmara Hijyen Ürünleri San. ve Dış Tic. Ltd. Şti.">
+    <meta name="robots" content="index, follow">
+
+    <!-- Canonical URL -->
+    <link rel="canonical" href="@fullUrl" />
+
+
+    <!-- Hreflang Tags (SEO için çoklu dil) -->
+<link rel="alternate" hreflang="tr"
+      href="@($"https://www.marmarahijyen.com{cleanPath}")" />
+
+<link rel="alternate" hreflang="en"
+      href="@($"https://www.marmarahijyen.com/en{cleanPath}")" />
+
+<link rel="alternate" hreflang="zh"
+      href="@($"https://www.marmarahijyen.com/zh{cleanPath}")" />
+
+<link rel="alternate" hreflang="ru"
+      href="@($"https://www.marmarahijyen.com/ru{cleanPath}")" />
+
+<link rel="alternate" hreflang="ar"
+      href="@($"https://www.marmarahijyen.com/ar{cleanPath}")" />
+
+<link rel="alternate" hreflang="x-default"
+      href="@($"https://www.marmarahijyen.com{cleanPath}")" />
+
+
+
+    <!-- Open Graph (Facebook, LinkedIn) -->
+    <meta property="og:type" content="website">
+    <meta property="og:site_name" content="Marmara Hijyen">
+    <meta property="og:title" content="@ViewData["Title"] - Marmara Hijyen">
+    <meta property="og:description" content="@ViewData["Description"]">
+<meta property="og:url" content="@fullUrl">
+
+    <meta property="og:image" content="https://www.marmarahijyen.com/Image/og-image.jpg">
+<meta property="og:locale" content="@(culture switch {
+    "en" => "en_US",
+    "zh" => "zh_CN",
+    "ru" => "ru_RU",
+    "ar" => "ar_SA",
+    _ => "tr_TR"
+})">
+
+
+    <!-- Twitter Card -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="@ViewData["Title"] - Marmara Hijyen">
+    <meta name="twitter:description" content="@ViewData["Description"]">
+    <meta name="twitter:image" content="https://www.marmarahijyen.com/Image/og-image.jpg">
+
+    <!-- Favicons -->
+    <link rel="icon" type="image/x-icon" href="~/favicon.ico">
+    <link rel="apple-touch-icon" href="~/Image/apple-touch-icon.png">
+
+    <!-- Preconnect for Performance -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+    <!-- Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&family=Montserrat:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+
+    <!-- Vendor CSS Files -->
+    <link href="~/Thema/assets/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+    <link href="~/Thema/assets/vendor/bootstrap-icons/bootstrap-icons.css" rel="stylesheet">
+    <link href="~/Thema/assets/vendor/aos/aos.css" rel="stylesheet">
+    <link href="~/Thema/assets/vendor/glightbox/css/glightbox.min.css" rel="stylesheet">
+    <link href="~/Thema/assets/vendor/swiper/swiper-bundle.min.css" rel="stylesheet">
+
+    <!-- Main CSS File -->
+    <link href="~/Thema/assets/css/main.css" rel="stylesheet">
+
+    <!-- Custom Styles -->
+    <style>
+        /* ===== Selection Rengi ===== */
+        ::selection {
+            background: #3b82f6;
+            color: #fff;
+        }
+
+        ::-moz-selection {
+            background: #3b82f6;
+            color: #fff;
+        }
+
+        /* ===== Smooth Scroll ===== */
+        html {
+            scroll-behavior: smooth;
+        }
+
+        /* ===== Şık Logo Yazısı ===== */
+        .brand-text {
+            font-family: 'Montserrat', sans-serif;
+            font-weight: 800;
+            font-size: 1.5rem;
+            background: linear-gradient(135deg, #1e40af 0%, #3b82f6 50%, #60a5fa 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            letter-spacing: -0.5px;
+            position: relative;
+            transition: all 0.3s ease;
+        }
+
+            .brand-text:hover {
+                transform: scale(1.02);
+            }
+
+            .brand-text::after {
+                content: '';
+                position: absolute;
+                bottom: -4px;
+                left: 0;
+                width: 100%;
+                height: 3px;
+                background: linear-gradient(90deg, #3b82f6, #60a5fa, transparent);
+                border-radius: 2px;
+            }
+
+        /* ===== Dil Seçici Select ===== */
+        .language-select-wrapper {
+            position: relative;
+        }
+
+        .language-select {
+            appearance: none;
+            -webkit-appearance: none;
+            background: rgba(255,255,255,0.1);
+            border: 1px solid rgba(255,255,255,0.25);
+            color: #fff;
+            padding: 6px 32px 6px 12px;
+            border-radius: 6px;
+            font-size: 13px;
+            cursor: pointer;
+            transition: all 0.3s;
+            min-width: 130px;
+        }
+
+            .language-select:hover,
+            .language-select:focus {
+                background: rgba(255,255,255,0.2);
+                border-color: rgba(255,255,255,0.4);
+                outline: none;
+                box-shadow: 0 0 15px rgba(59, 130, 246, 0.3);
+            }
+
+            .language-select option {
+                background: #1e293b;
+                color: #fff;
+                padding: 10px;
+            }
+
+        .language-select-icon {
+            position: absolute;
+            right: 10px;
+            top: 50%;
+            transform: translateY(-50%);
+            pointer-events: none;
+            color: #fff;
+            font-size: 12px;
+        }
+
+        /* ===== Footer Styles ===== */
+        .footer {
+            position: relative;
+            overflow: hidden;
+        }
+
+            /* Footer Arka Plan Efektleri */
+            .footer::before {
+                content: '';
+                position: absolute;
+                top: -50%;
+                left: -50%;
+                width: 200%;
+                height: 200%;
+                background: radial-gradient(circle at 20% 50%, rgba(59, 130, 246, 0.08) 0%, transparent 50%), radial-gradient(circle at 80% 80%, rgba(59, 130, 246, 0.05) 0%, transparent 40%);
+                pointer-events: none;
+            }
+
+        /* Floating Decorations */
+        .footer-decoration {
+            position: absolute;
+            width: 300px;
+            height: 300px;
+            border-radius: 50%;
+            background: linear-gradient(135deg, rgba(59, 130, 246, 0.1), transparent);
+            filter: blur(80px);
+            pointer-events: none;
+        }
+
+        .footer-decoration-1 {
+            top: -100px;
+            right: -100px;
+        }
+
+        .footer-decoration-2 {
+            bottom: -100px;
+            left: -100px;
+        }
+
+        /* Footer Floating Icons */
+        .footer-floating-icons {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            pointer-events: none;
+            overflow: hidden;
+        }
+
+            .footer-floating-icons i {
+                position: absolute;
+                color: rgba(255, 255, 255, 0.03);
+                font-size: 40px;
+                animation: floatIcon 20s ease-in-out infinite;
+            }
+
+                .footer-floating-icons i:nth-child(1) {
+                    top: 10%;
+                    left: 5%;
+                    animation-delay: 0s;
+                    font-size: 35px;
+                }
+
+                .footer-floating-icons i:nth-child(2) {
+                    top: 20%;
+                    left: 15%;
+                    animation-delay: 2s;
+                    font-size: 45px;
+                }
+
+                .footer-floating-icons i:nth-child(3) {
+                    top: 60%;
+                    left: 10%;
+                    animation-delay: 4s;
+                    font-size: 30px;
+                }
+
+                .footer-floating-icons i:nth-child(4) {
+                    top: 30%;
+                    right: 10%;
+                    animation-delay: 1s;
+                    font-size: 50px;
+                }
+
+                .footer-floating-icons i:nth-child(5) {
+                    top: 70%;
+                    right: 15%;
+                    animation-delay: 3s;
+                    font-size: 38px;
+                }
+
+                .footer-floating-icons i:nth-child(6) {
+                    top: 50%;
+                    right: 5%;
+                    animation-delay: 5s;
+                    font-size: 42px;
+                }
+
+                .footer-floating-icons i:nth-child(7) {
+                    top: 80%;
+                    left: 25%;
+                    animation-delay: 2.5s;
+                    font-size: 36px;
+                }
+
+                .footer-floating-icons i:nth-child(8) {
+                    top: 15%;
+                    right: 25%;
+                    animation-delay: 3.5s;
+                    font-size: 32px;
+                }
+
+        @@keyframes floatIcon {
+            0%, 100% {
+                transform: translateY(0) rotate(0deg);
+                opacity: 0.03;
+            }
+
+            25% {
+                transform: translateY(-15px) rotate(5deg);
+                opacity: 0.05;
+            }
+
+            50% {
+                transform: translateY(-25px) rotate(-5deg);
+                opacity: 0.04;
+            }
+
+            75% {
+                transform: translateY(-10px) rotate(3deg);
+                opacity: 0.05;
+            }
+        }
+
+        /* Footer Bottom */
+        .footer-bottom {
+            background: linear-gradient(135deg, #0f172a, #0b2a4a);
+            padding: 18px 0;
+            font-size: 13px;
+            border-top: 1px solid rgba(59, 130, 246, 0.2);
+            position: relative;
+        }
+
+        .footer-copy {
+            color: rgba(219, 234, 254, 0.8);
+        }
+
+        .footer-legal-links {
+            display: flex;
+            gap: 12px;
+            align-items: center;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+
+            .footer-legal-links span {
+                color: rgba(255, 255, 255, 0.25);
+            }
+
+            .footer-legal-links a {
+                color: rgba(147, 197, 253, 0.85);
+                text-decoration: none;
+                font-weight: 500;
+                transition: all 0.25s ease;
+            }
+
+                .footer-legal-links a:hover {
+                    color: #60a5fa;
+                }
+
+        /* Footer Links */
+        .footer-nav-links a {
+            color: rgba(255,255,255,0.7);
+            transition: all 0.3s ease;
+            display: inline-block;
+        }
+
+            .footer-nav-links a:hover {
+                color: #60a5fa;
+                padding-left: 8px;
+            }
+
+        /* Contact Info */
+        .contact-icon {
+            color: #3b82f6;
+            font-size: 18px;
+        }
+
+        .contact-text {
+            color: rgba(255,255,255,0.75);
+            line-height: 1.6;
+        }
+
+        .contact-link {
+            color: rgba(255,255,255,0.75);
+            text-decoration: none;
+            transition: all 0.3s ease;
+        }
+
+            .contact-link:hover {
+                color: #60a5fa;
+            }
+
+        /* Social Circles */
+        .social-circle {
+            width: 40px;
+            height: 40px;
+            background: rgba(255,255,255,0.08);
+            border: 1px solid rgba(255,255,255,0.1);
+            transition: all 0.3s ease;
+        }
+
+            .social-circle:hover {
+                background: #3b82f6 !important;
+                border-color: #3b82f6;
+                transform: translateY(-4px);
+                box-shadow: 0 8px 20px rgba(59, 130, 246, 0.35);
+            }
+
+        /* ===== Global Link Styles ===== */
+        a {
+            transition: all 0.3s ease;
+        }
+
+        /* ===== Navbar Hover Effects ===== */
+        .navmenu ul li a {
+            position: relative;
+        }
+
+            .navmenu ul li a::before {
+                content: '';
+                position: absolute;
+                bottom: 0;
+                left: 50%;
+                width: 0;
+                height: 2px;
+                background: linear-gradient(90deg, #3b82f6, #60a5fa);
+                transition: all 0.3s ease;
+                transform: translateX(-50%);
+            }
+
+            .navmenu ul li a:hover::before,
+            .navmenu ul li a.active::before {
+                width: 80%;
+            }
+
+        /* ===== Button Hover Effects ===== */
+        .btn-primary {
+            position: relative;
+            overflow: hidden;
+            z-index: 1;
+        }
+
+            .btn-primary::before {
+                content: '';
+                position: absolute;
+                top: 0;
+                left: -100%;
+                width: 100%;
+                height: 100%;
+                background: linear-gradient(90deg, transparent, rgba(255,255,255,0.2), transparent);
+                transition: left 0.5s ease;
+                z-index: -1;
+            }
+
+            .btn-primary:hover::before {
+                left: 100%;
+            }
+
+        /* ===== Card Hover Effects ===== */
+        .card {
+            transition: all 0.3s ease;
+        }
+
+            .card:hover {
+                transform: translateY(-5px);
+                box-shadow: 0 15px 40px rgba(0,0,0,0.1);
+            }
+
+        /* ===== Loading Animation for Images ===== */
+        img {
+            opacity: 1;
+            transition: opacity 0.3s ease;
+        }
+
+            img[loading="lazy"] {
+                opacity: 0;
+            }
+
+                img[loading="lazy"].loaded {
+                    opacity: 1;
+                }
+
+        /* ===== Topbar Pulse Effect ===== */
+        .topbar .contact-info a {
+            position: relative;
+        }
+
+        .topbar .bi-envelope::before,
+        .topbar .bi-phone::before {
+            animation: pulse 2s ease-in-out infinite;
+        }
+
+        @@keyframes pulse {
+            0%, 100% {
+                opacity: 1;
+            }
+
+            50% {
+                opacity: 0.6;
+            }
+        }
+
+        /* ===== Scroll Top Button ===== */
+        .scroll-top {
+            transition: all 0.4s ease;
+        }
+
+            .scroll-top:hover {
+                transform: translateY(-5px);
+                box-shadow: 0 10px 25px rgba(59, 130, 246, 0.4);
+            }
+
+        /* ===== Mobile Menu Improvements ===== */
+        @@media (max-width: 1199px) {
+            .brand-text {
+                font-size: 1.2rem;
+            }
+        }
+
+        /* ===== Preloader Custom ===== */
+        #preloader {
+            background: linear-gradient(135deg, #f8fafc, #e2e8f0);
+        }
+
+            #preloader::before {
+                border-color: #3b82f6 transparent #3b82f6 transparent;
+            }
+    </style>
+
+    <!-- JSON-LD Structured Data (SEO için önemli) -->
+<script type="application/ld+json">
+@Html.Raw(@"{
+  ""@context"": ""https://schema.org"",
+  ""@type"": ""Organization"",
+  ""name"": ""Marmara Hijyen Ürünleri San. ve Dış Tic. Ltd. Şti."",
+  ""url"": ""https://www.marmarahijyen.com"",
+  ""logo"": ""https://www.marmarahijyen.com/Image/logo.png"",
+  ""description"": ""Hijyen, medikal ve temizlik ürünleri üreticisi. MyFix ve CleanPad markalarıyla Türkiye ve dünyaya hizmet."",
+  ""address"": {
+    ""@type"": ""PostalAddress"",
+    ""streetAddress"": ""Akçaburgaz Mah. Ahmet Yesevi Cad. No:1/1"",
+    ""addressLocality"": ""Esenyurt"",
+    ""addressRegion"": ""İstanbul"",
+    ""postalCode"": ""34500"",
+    ""addressCountry"": ""TR""
+  },
+  ""contactPoint"": {
+    ""@type"": ""ContactPoint"",
+    ""telephone"": ""+90-212-690-00-01"",
+    ""contactType"": ""customer service"",
+    ""availableLanguage"": [""Turkish"", ""English"", ""Chinese"", ""Russian"", ""Arabic""]
+  },
+  ""sameAs"": [
+    ""https://www.facebook.com/marmarahijyen"",
+    ""https://www.instagram.com/marmarahijyen"",
+    ""https://www.linkedin.com/company/marmarahijyen""
+  ]
+}")
+</script>
+
+    @await RenderSectionAsync("Styles", required: false)
+</head>
+<body class="index-page">
+
+    <!-- ==================== HEADER ==================== -->
+    <header id="header" class="header fixed-top">
+
+        <!-- Top Bar -->
+        <div class="topbar d-flex align-items-center dark-background">
+            <div class="container d-flex justify-content-center justify-content-md-between">
+
+                <!-- Sol - İletişim Bilgileri -->
+                <div class="contact-info d-flex align-items-center">
+                    <i class="bi bi-envelope d-flex align-items-center">
+                        <a href="mailto:info@marmarahijyen.com">info@marmarahijyen.com</a>
+                    </i>
+                    <i class="bi bi-phone d-flex align-items-center ms-4">
+                        <a href="tel:+902126900001">+90 212 690 00 01</a>
+                    </i>
+                </div>
+
+                <!-- Sağ - Dil Seçici + Sosyal Medya -->
+                <div class="d-none d-md-flex align-items-center gap-3">
+
+                    <!-- Dil Seçici (Select/Combobox) -->
+                    <div class="language-select-wrapper">
+                        <select class="language-select" id="languageSelector" onchange="changeLanguage(this.value)">
+                            <option value="tr" selected="@(culture == "tr")">🇹🇷 Türkçe</option>
+                            <option value="en" selected="@(culture == "en")">🇬🇧 English</option>
+                            <option value="zh" selected="@(culture == "zh")">🇨🇳 中文</option>
+                            <option value="ru" selected="@(culture == "ru")">🇷🇺 Русский</option>
+                            <option value="ar" selected="@(culture == "ar")">🇸🇦 العربية</option>
+                        </select>
+
+                        <i class="bi bi-chevron-down language-select-icon"></i>
+                    </div>
+
+                    <!-- Sosyal Medya -->
+                    <div class="social-links d-flex align-items-center gap-2">
+                        <a href="#!" aria-label="Facebook"><i class="bi bi-facebook"></i></a>
+                        <a href="#!" aria-label="Instagram"><i class="bi bi-instagram"></i></a>
+                        <a href="#!" aria-label="LinkedIn"><i class="bi bi-linkedin"></i></a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- End Top Bar -->
+        <!-- Navigation -->
+        <div class="branding d-flex align-items-center">
+            <div class="container position-relative d-flex align-items-center justify-content-between">
+
+                <!-- Logo / Marka Adı -->
+                <a href="~/" class="logo d-flex align-items-center text-decoration-none">
+                    <span class="brand-text">MARMARA HİJYEN</span>
+                </a>
+
+                <nav id="navmenu" class="navmenu">
+                    <ul>
+                        <li>
+                            <a href="~/" class="@(ViewData["ActivePage"]?.ToString() == "Home" ? "active" : "")">Ana Sayfa</a>
+                        </li>
+                        <li>
+                            <a href="~/About" class="@(ViewData["ActivePage"]?.ToString() == "About" ? "active" : "")">Hakkımızda</a>
+                        </li>
+                        <li>
+                            <a href="~/Products" class="@(ViewData["ActivePage"]?.ToString() == "Products" ? "active" : "")">
+                                <span>Ürünlerimiz</span>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="~/Contact" class="@(ViewData["ActivePage"]?.ToString() == "Contact" ? "active" : "")">İletişim</a>
+                        </li>
+                    </ul>
+                    <i class="mobile-nav-toggle d-xl-none bi bi-list"></i>
+                </nav>
+
+            </div>
+        </div>
+        <!-- End Navigation -->
+
+    </header>
+    <!-- End Header -->
+    <!-- ==================== MAIN CONTENT ==================== -->
+    <main class="main">
+        @RenderBody()
+    </main>
+    <!-- End Main -->
+    <!-- ==================== FOOTER ==================== -->
+    <footer id="footer" class="footer position-relative">
+
+        <div class="container py-5 position-relative">
+            <div class="row gy-4">
+
+                <!-- Firma Bilgileri -->
+                <div class="col-lg-4 col-md-6">
+                    <div class="footer-brand">
+                        <a href="~/" class="logo d-flex align-items-center text-decoration-none">
+                            <span class="brand-text">MARMARA HİJYEN</span>
+                        </a>
+                        <br />
+                        <p style="color:#475569; line-height:1.8;">
+                            Marmara Hijyen olarak <strong>MyFix</strong> ve <strong>CleanPad</strong> markalarımızla
+                            hijyen, medikal ve temizlik ürünleri üretiyoruz. Türkiye'deki hastaneler, bakım evleri,
+                            ecza depoları ve eczanelere hizmet veriyor; ihracat ve private label üretim yapıyoruz.
+                        </p>
+
+                        <!-- Sosyal Medya -->
+                        <div class="d-flex gap-2">
+                            <a href="#!" style="width:38px;height:38px;background:#e0ecff;color:#1e40af;"
+                               class="d-flex align-items-center justify-content-center rounded-circle text-decoration-none">
+                                <i class="bi bi-facebook"></i>
+                            </a>
+                            <a href="#!" style="width:38px;height:38px;background:#e0ecff;color:#1e40af;"
+                               class="d-flex align-items-center justify-content-center rounded-circle text-decoration-none">
+                                <i class="bi bi-instagram"></i>
+                            </a>
+                            <a href="#!" style="width:38px;height:38px;background:#e0ecff;color:#1e40af;"
+                               class="d-flex align-items-center justify-content-center rounded-circle text-decoration-none">
+                                <i class="bi bi-linkedin"></i>
+                            </a>
+                            <a href="#!" style="width:38px;height:38px;background:#e0ecff;color:#1e40af;"
+                               class="d-flex align-items-center justify-content-center rounded-circle text-decoration-none">
+                                <i class="bi bi-whatsapp"></i>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+   
+                <div class="col-lg-2 col-md-6">
+
+                </div>
+
+
+                <div class="col-lg-2 col-md-6">
+
+                </div>
+
+                <!-- İletişim -->
+                <div class="col-lg-4 col-md-6">
+                    <h5 style="color:#1e3a8a;">İletişim</h5>
+                    <hr />
+                    <ul class="list-unstyled">
+                        <li class="d-flex mb-3">
+                            <i class="bi bi-geo-alt me-3 mt-1" style="color:#2563eb;"></i>
+                            <span style="color:#334155;">
+                                Akçaburgaz Mah. Ahmet Yesevi Cad. No:1/1<br>
+                                Esenyurt / İstanbul
+                            </span>
+                        </li>
+                        <li class="d-flex mb-3">
+                            <i class="bi bi-telephone me-3 mt-1" style="color:#2563eb;"></i>
+                            <a href="tel:+902126900001" style="color:#1d4ed8;">+90 212 690 00 01</a>
+                        </li>
+                        <li class="d-flex mb-3">
+                            <i class="bi bi-envelope me-3 mt-1" style="color:#2563eb;"></i>
+                            <a href="mailto:info@marmarahijyen.com" style="color:#1d4ed8;">info@marmarahijyen.com</a>
+                        </li>
+                        <li class="d-flex">
+                            <i class="bi bi-globe me-3 mt-1" style="color:#2563eb;"></i>
+                            <a href="https://www.marmarahijyen.com" target="_blank" style="color:#1d4ed8;">
+                                www.marmarahijyen.com
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+
+            </div>
+        </div>
+
+        <!-- Footer Bottom -->
+        <div style="background:#eaf2ff; border-top:1px solid #dbeafe; padding:16px 0;">
+            <div class="container">
+                <div class="row align-items-center gy-2">
+                    <div class="col-md-6 text-center text-md-start">
+                        <span style="color:#475569; font-size:13px;">
+                            © @DateTime.Now.Year <strong>Marmara Hijyen Ürünleri San. ve Dış Tic. Ltd. Şti.</strong>
+                            Tüm hakları saklıdır.
+                        </span>
+                    </div>
+                    <div class="col-md-6 text-center text-md-end">
+                        <a href="~/Privacy" style="color:#1d4ed8; font-size:13px;">Gizlilik Politikası</a>
+                        <span style="color:#94a3b8;"> | </span>
+                        <a href="~/Terms" style="color:#1d4ed8; font-size:13px;">Kullanım Şartları</a>
+                        <span style="color:#94a3b8;"> | </span>
+                        <a href="~/Kvkk" style="color:#1d4ed8; font-size:13px;">KVKK</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </footer>
+
+    <!-- End Footer -->
+    <!-- Scroll Top -->
+    <a href="#" id="scroll-top" class="scroll-top d-flex align-items-center justify-content-center" aria-label="Yukarı çık">
+        <i class="bi bi-arrow-up-short"></i>
+    </a>
+
+    <!-- Preloader -->
+    <div id="preloader"></div>
+
+    <!-- Vendor JS Files -->
+    <script src="~/Thema/assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+    <script src="~/Thema/assets/vendor/aos/aos.js"></script>
+    <script src="~/Thema/assets/vendor/glightbox/js/glightbox.min.js"></script>
+    <script src="~/Thema/assets/vendor/purecounter/purecounter_vanilla.js"></script>
+    <script src="~/Thema/assets/vendor/swiper/swiper-bundle.min.js"></script>
+
+    <!-- Main JS File -->
+    <script src="~/Thema/assets/js/main.js"></script>
+
+    <!-- Custom Scripts -->
+    <script>
+        // Dil Değiştirme
+        function changeLanguage(lang) {
+            var currentPath = window.location.pathname;
+            var newPath = '';
+            var cleanPath = currentPath.replace(/^\/(en|zh|ru|ar)/, '');
+
+            if (cleanPath === '' || cleanPath === '/') {
+                cleanPath = '/';
+            }
+
+            if (lang === 'tr') {
+                newPath = cleanPath;
+            } else {
+                newPath = '/' + lang + cleanPath;
+            }
+
+            window.location.href = newPath;
+        }
+        // Lazy Load Images
+        document.addEventListener('DOMContentLoaded', function() {
+            const images = document.querySelectorAll('img[loading="lazy"]');
+            images.forEach(img => {
+                img.addEventListener('load', function() {
+                    this.classList.add('loaded');
+                });
+            });
+        });
+        // Smooth Scroll for Anchor Links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function(e) {
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    e.preventDefault();
+                    target.scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'start'
+                    });
+                }
+            });
+        });
+    </script>
+    @await RenderSectionAsync("Scripts", required: false)
+</body>
+</html>

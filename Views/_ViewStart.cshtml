@@ -1,0 +1,11 @@
+﻿@{
+    string culture = Context.Request.RouteValues["culture"]?.ToString()?.ToLower() ?? "tr";
+    Layout = culture switch
+    {
+        "en" => "_Layout_en",
+        "zh" => "_Layout_zh",
+        "ru" => "_Layout_ru",
+        "ar" => "_Layout_ar",
+        _ => "_Layout"
+    };
+}

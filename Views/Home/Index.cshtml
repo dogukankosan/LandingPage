@@ -1,0 +1,814 @@
+﻿@{
+    ViewData["Title"] = "Ana Sayfa";
+    ViewData["Description"] = "Marmara Hijyen - 2015'ten bu yana hijyen, medikal ve temizlik ürünleri üreticisi. MyFix ve CleanPad markalarıyla Türkiye ve dünyaya hizmet.";
+    ViewData["Keywords"] = "hijyen ürünleri üreticisi, hasta altı bezi üretici, underpad üretici, private label üretim, ıslak mendil üretici, MyFix, CleanPad";
+    ViewData["ActivePage"] = "Home";
+
+    // Dinamik yıl hesaplama
+    int kurulusYili = 2015;
+    int gecenYil = DateTime.Now.Year - kurulusYili;
+}
+
+<!-- HERO SECTION -->
+<section id="hero" class="hero section">
+    <div class="container" data-aos="fade-up" data-aos-delay="100">
+        <div class="row align-items-center">
+            <div class="col-lg-7">
+                <div class="hero-content">
+                    <br />
+                    <div class="mb-3" data-aos="fade-right" data-aos-delay="150">
+                        <span class="badge bg-primary bg-opacity-10 text-primary px-3 py-2 rounded-pill">
+                            <i class="bi bi-building me-1"></i> 2015'ten Bu Yana Üretim
+                        </span>
+                    </div>
+                    <h1 data-aos="fade-right" data-aos-delay="200">
+                        Güvenilir <span class="highlight">Hijyen Ürünleri</span> Üreticisi
+                    </h1>
+                    <p class="lead mb-3" data-aos="fade-right" data-aos-delay="250" style="font-size: 1.25rem; font-weight: 500; color: #1e40af;">
+                        Kendi Markalarımız | İhracat | Private Label | Kurumsal Tedarik
+                    </p>
+                    <p class="hero-description" data-aos="fade-right" data-aos-delay="300">
+                        Marmara Hijyen Ürünleri Sanayi ve Dış Ticaret Limited Şirketi, hijyen, medikal ve temizlik ürünleri
+                        alanında üretim yapan profesyonel bir üretici firmadır. <strong>MyFix</strong> ve <strong>CleanPad</strong>
+                        markalarımızla Türkiye'de özel sektör ve kamu kuruluşlarına hizmet veriyor; aynı zamanda
+                        <strong>ihracat ve özel marka (private label)</strong> üretimiyle yurt içi ve yurt dışı pazarlara ulaşıyoruz.
+                    </p>
+                    <p class="text-muted mb-4" data-aos="fade-right" data-aos-delay="350">
+                        Türkiye'deki özel ve kamu hastaneleri, bakım evleri, ecza depoları ve eczanelerin yanı sıra
+                        Avrupa, Orta Doğu ve Afrika pazarlarında güvenilir bir tedarikçi olarak yer alıyoruz.
+                    </p>
+                    <div class="d-flex flex-wrap gap-3 mb-4" data-aos="fade-right" data-aos-delay="400">
+                        <div class="d-flex align-items-center bg-light rounded-pill px-3 py-2">
+                            <i class="bi bi-award-fill text-primary me-2"></i>
+                            <span class="small fw-medium">MyFix & CleanPad</span>
+                        </div>
+                        <div class="d-flex align-items-center bg-light rounded-pill px-3 py-2">
+                            <i class="bi bi-patch-check-fill text-success me-2"></i>
+                            <span class="small fw-medium">ISO Sertifikalı</span>
+                        </div>
+                        <div class="d-flex align-items-center bg-light rounded-pill px-3 py-2">
+                            <i class="bi bi-globe text-info me-2"></i>
+                            <span class="small fw-medium">İhracat Odaklı</span>
+                        </div>
+                        <div class="d-flex align-items-center bg-light rounded-pill px-3 py-2">
+                            <i class="bi bi-box-seam text-warning me-2"></i>
+                            <span class="small fw-medium">Private Label</span>
+                        </div>
+                    </div>
+                    <div class="hero-actions d-flex flex-wrap gap-3" data-aos="fade-right" data-aos-delay="450">
+                        <a href="~/Contact" class="btn btn-primary btn-lg"><i class="bi bi-envelope me-2"></i>Teklif Alın</a>
+                        <a href="~/Products" class="btn btn-outline-primary btn-lg">Ürünlerimiz <i class="bi bi-arrow-right ms-2"></i></a>
+                        <a href="tel:+902126900001" class="btn btn-outline-secondary btn-lg"><i class="bi bi-telephone me-2"></i>+90 212 690 00 01</a>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-5 text-center" data-aos="fade-left" data-aos-delay="300">
+                <div class="position-relative">
+                    <img src="~/Image/urt.jpg" alt="Marmara Hijyen Logo" class="img-fluid" style="max-width: 400px;">
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+
+
+<section id="brands" class="section py-5">
+    <div class="container">
+        <div class="text-center mb-5" data-aos="fade-up">
+            <span class="badge bg-primary bg-opacity-10 text-primary px-3 py-2 rounded-pill mb-3">
+                Tescilli Markalarımız
+            </span>
+            <h2 class="display-6 fw-bold">MyFix & CleanPad</h2>
+            <p class="text-muted">
+                Kendi markalarımızla medikal hijyen ve temizlik alanında profesyonel çözümler sunuyoruz
+            </p>
+        </div>
+
+        <div class="row g-4">
+            <!-- MYFIX -->
+            <div class="col-lg-6" data-aos="fade-up" data-aos-delay="100">
+                <div class="card h-100 border-0 shadow-sm overflow-hidden">
+                    <div class="card-body p-5">
+                        <div class="d-flex align-items-center mb-4">
+                            <div class="bg-primary text-white rounded-3 d-flex align-items-center justify-content-center me-3"
+                                 style="width: 70px; height: 70px;">
+                                <i class="bi bi-heart-pulse fs-2"></i>
+                            </div>
+                            <div>
+                                <h3 class="fw-bold mb-1 text-primary">MyFix</h3>
+                                <span class="badge bg-primary bg-opacity-10 text-primary">
+                                    Medikal Bakım Ürünleri
+                                </span>
+                            </div>
+                        </div>
+
+                        <p class="text-muted mb-4">
+                            Hastaneler, klinikler, bakım evleri ve sağlık kuruluşları için geliştirilmiş,
+                            yüksek emiciliğe sahip profesyonel medikal bakım ürünleri. Hasta konforu ve
+                            hijyen standartları ön planda tutulur.
+                        </p>
+
+                        <ul class="list-unstyled mb-0">
+                            <li class="mb-2">
+                                <i class="bi bi-check-circle-fill text-success me-2"></i>
+                                Hasta Altı Bezi (Bağlamalı & Bantlı)
+                            </li>
+                            <li class="mb-2">
+                                <i class="bi bi-check-circle-fill text-success me-2"></i>
+                                Underpad (Medikal Serme Örtü)
+                            </li>
+                            <li class="mb-2">
+                                <i class="bi bi-check-circle-fill text-success me-2"></i>
+                                Yetişkin Bakım Bezleri
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+            <!-- CLEANPAD -->
+            <div class="col-lg-6" data-aos="fade-up" data-aos-delay="200">
+                <div class="card h-100 border-0 shadow-sm overflow-hidden">
+                    <div class="card-body p-5">
+                        <div class="d-flex align-items-center mb-4">
+                            <div class="bg-success text-white rounded-3 d-flex align-items-center justify-content-center me-3"
+                                 style="width: 70px; height: 70px;">
+                                <i class="bi bi-droplet-half fs-2"></i>
+                            </div>
+                            <div>
+                                <h3 class="fw-bold mb-1 text-success">CleanPad</h3>
+                                <span class="badge bg-success bg-opacity-10 text-success">
+                                    Medikal & Temizlik Hijyen Serisi
+                                </span>
+                            </div>
+                        </div>
+
+                        <p class="text-muted mb-4">
+                            Sağlık kuruluşları, bakım merkezleri ve profesyonel temizlik alanları için
+                            geliştirilmiş hijyen ürünleri. Hasta bakımı, kişisel temizlik ve yüzey
+                            temizliğine yönelik geniş ürün gamı sunar.
+                        </p>
+
+                        <ul class="list-unstyled mb-0">
+                            <li class="mb-2">
+                                <i class="bi bi-check-circle-fill text-success me-2"></i>
+                                Underpad & Serme Bezler
+                            </li>
+                            <li class="mb-2">
+                                <i class="bi bi-check-circle-fill text-success me-2"></i>
+                                Bağlamalı Bakım Bezleri
+                            </li>
+                            <li class="mb-2">
+                                <i class="bi bi-check-circle-fill text-success me-2"></i>
+                                Vücut Temizleme Mendilleri
+                            </li>
+                            <li class="mb-2">
+                                <i class="bi bi-check-circle-fill text-success me-2"></i>
+                                Yüzey Temizleme Mendilleri
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- ÜRÜNLERİMİZ SECTION -->
+<section id="products-detail" class="section light-background py-5">
+    <div class="container section-title text-center mb-5" data-aos="fade-up">
+        <span class="badge bg-primary bg-opacity-10 text-primary px-3 py-2 rounded-pill mb-3">Ürün Kataloğu</span>
+        <h2 class="display-6 fw-bold">Ürünlerimiz</h2>
+        <p class="text-muted">Hijyen, medikal ve temizlik alanında kaliteli ürünler üretiyoruz</p>
+    </div>
+
+    <div class="container" data-aos="fade-up" data-aos-delay="100">
+        <div class="row g-4 mb-5">
+
+            <!-- Underpad (Serme Örtü) -->
+            <div class="col-lg-6" data-aos="zoom-in" data-aos-delay="100">
+                <div class="card h-100 border-0 shadow-sm overflow-hidden product-card-large">
+                    <div class="row g-0">
+                        <div class="col-md-6">
+                            <div class="p-4">
+                                <div class="d-flex align-items-center gap-2 mb-2">
+                                    <span class="badge bg-primary">MyFix</span>
+                                    <span class="badge bg-light text-muted">Medikal</span>
+                                </div>
+                                <h3 class="h4">Underpad (Serme Örtü)</h3>
+                                <p class="text-muted small">
+                                    Hasta bakımı, yaşlı bakımı ve hijyen gerektiren tüm alanlarda güvenli ve pratik kullanım.
+                                    60×90 cm seçenekleriyle farklı ihtiyaçlara etkili çözümler.
+                                </p>
+                                <ul class="list-unstyled small mb-3">
+                                    <li><i class="bi bi-check-circle-fill text-success me-2"></i>Yüksek Emici İç Yapı</li>
+                                    <li><i class="bi bi-check-circle-fill text-success me-2"></i>Sıvı Geçirmez Bariyer</li>
+                                    <li><i class="bi bi-check-circle-fill text-success me-2"></i>Cilt Dostu Üst Yüzey</li>
+                                </ul>
+                                <a href="~/Products#underpad" class="btn btn-outline-primary btn-sm">Detaylı İncele <i class="bi bi-arrow-right"></i></a>
+                            </div>
+                        </div>
+                        <div class="col-md-6 product-image-wrapper" onclick="openLightbox(this)">
+                            <img src="~/Image/11.png" alt="Underpad Serme Örtü" class="img-fluid product-img" data-title="Underpad (Serme Örtü)">
+                            <div class="zoom-hint"><i class="bi bi-zoom-in"></i></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Hasta Altı Bezi (Bağlamalı) -->
+            <div class="col-lg-6" data-aos="zoom-in" data-aos-delay="150">
+                <div class="card h-100 border-0 shadow-sm overflow-hidden product-card-large">
+                    <div class="row g-0">
+                        <div class="col-md-6">
+                            <div class="p-4">
+                                <div class="d-flex align-items-center gap-2 mb-2">
+                                    <span class="badge bg-primary">MyFix</span>
+                                    <span class="badge bg-light text-muted">Medikal</span>
+                                </div>
+                                <h3 class="h4">Hasta Altı Bezi (Bağlamalı)</h3>
+                                <p class="text-muted small">
+                                    Orta ve ağır düzeyde inkontinans yaşayan bireyler için güvenli, konforlu ve hijyenik kullanım.
+                                    S, M, L, XL beden seçenekleri ile farklı vücut yapılarına uyum.
+                                </p>
+                                <ul class="list-unstyled small mb-3">
+                                    <li><i class="bi bi-check-circle-fill text-success me-2"></i>Yüksek Emicilik Kapasitesi</li>
+                                    <li><i class="bi bi-check-circle-fill text-success me-2"></i>Sızıntı Önleyici Bariyerler</li>
+                                    <li><i class="bi bi-check-circle-fill text-success me-2"></i>İstenilen Gramajda Üretim</li>
+                                </ul>
+                                <a href="~/Products#hasta-alti-bezi" class="btn btn-outline-primary btn-sm">Detaylı İncele <i class="bi bi-arrow-right"></i></a>
+                            </div>
+                        </div>
+                        <div class="col-md-6 product-image-wrapper" onclick="openLightbox(this)">
+                            <img src="~/Image/1.png" alt="Hasta Altı Bezi" class="img-fluid product-img" data-title="Hasta Altı Bezi (Bağlamalı)">
+                            <div class="zoom-hint"><i class="bi bi-zoom-in"></i></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Vücut Temizleme Mendili -->
+            <div class="col-lg-6" data-aos="zoom-in" data-aos-delay="200">
+                <div class="card h-100 border-0 shadow-sm overflow-hidden product-card-large">
+                    <div class="row g-0">
+                        <div class="col-md-6">
+                            <div class="p-4">
+                                <div class="d-flex align-items-center gap-2 mb-2">
+                                    <span class="badge bg-success">CleanPad</span>
+                                    <span class="badge bg-light text-muted">Hijyen</span>
+                                </div>
+                                <h3 class="h4">Vücut Temizleme Mendili</h3>
+                                <p class="text-muted small">
+                                    Su ve sabun kullanımına gerek duymadan pratik ve hijyenik temizlik.
+                                    Hasta bakımı, yaşlı bakımı ve kişisel hijyen için ideal çözüm.
+                                </p>
+                                <ul class="list-unstyled small mb-3">
+                                    <li><i class="bi bi-check-circle-fill text-success me-2"></i>Yumuşak & Cilt Dostu</li>
+                                    <li><i class="bi bi-check-circle-fill text-success me-2"></i>Tahriş Riski Düşük</li>
+                                    <li><i class="bi bi-check-circle-fill text-success me-2"></i>Ferah His Bırakan Formül</li>
+                                </ul>
+                                <a href="~/Products#vucut-temizleme" class="btn btn-outline-success btn-sm">Detaylı İncele <i class="bi bi-arrow-right"></i></a>
+                            </div>
+                        </div>
+                        <div class="col-md-6 product-image-wrapper" onclick="openLightbox(this)">
+                            <img src="~/Image/16.png" alt="Vücut Temizleme Mendili" class="img-fluid product-img" data-title="Vücut Temizleme Mendili">
+                            <div class="zoom-hint"><i class="bi bi-zoom-in"></i></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Hasta Altı Bezi -->
+            <div class="col-lg-6" data-aos="zoom-in" data-aos-delay="250">
+                <div class="card h-100 border-0 shadow-sm overflow-hidden product-card-large">
+                    <div class="row g-0">
+                        <div class="col-md-6">
+                            <div class="p-4">
+                                <div class="d-flex align-items-center gap-2 mb-2">
+                                    <span class="badge bg-success">CleanPad</span>
+                                    <span class="badge bg-light text-muted">Medikal</span>
+                                </div>
+                                <h3 class="h4">Hasta Altı Bezi</h3>
+                                <p class="text-muted small">
+                                    Yetişkin hasta bakımı için özel olarak tasarlanmış yüksek emiciliğe sahip altı bezi.
+                                    Yumuşak ve nefes alabilir yüzey ile hasta konforunu sağlar.
+                                </p>
+                                <ul class="list-unstyled small mb-3">
+                                    <li><i class="bi bi-check-circle-fill text-success me-2"></i>Yüksek Emicilik Kapasitesi</li>
+                                    <li><i class="bi bi-check-circle-fill text-success me-2"></i>Yumuşak ve Nefes Alır Yüzey</li>
+                                    <li><i class="bi bi-check-circle-fill text-success me-2"></i>S, M, L, XL beden seçenekleri ile</li>
+                                </ul>
+                                <a href="~/Products#hasta-alti-bezi" class="btn btn-outline-primary btn-sm">Detaylı İncele <i class="bi bi-arrow-right"></i></a>
+                            </div>
+                        </div>
+                        <div class="col-md-6 product-image-wrapper" onclick="openLightbox(this)">
+                            <img src="~/Image/13.png" alt="Hasta Altı Bezi" class="img-fluid product-img" data-title="CleanPad Hasta Altı Bezi">
+                            <div class="zoom-hint"><i class="bi bi-zoom-in"></i></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="text-center" data-aos="fade-up" data-aos-delay="300">
+            <a href="~/Products" class="btn btn-primary btn-lg px-5">
+                <i class="bi bi-grid me-2"></i>Tüm Ürünleri İncele<i class="bi bi-arrow-right ms-2"></i>
+            </a>
+        </div>
+    </div>
+</section>
+
+
+<!-- KURUMSAL TEDARİK SECTION -->
+<section id="corporate" class="section py-5">
+    <div class="container">
+        <div class="row align-items-center">
+            <div class="col-lg-6 mb-5 mb-lg-0" data-aos="fade-right" data-aos-delay="100">
+                <span class="badge bg-info bg-opacity-10 text-info px-3 py-2 rounded-pill mb-3">
+                    <i class="bi bi-building me-1"></i> Kurumsal Çözümler
+                </span>
+                <h2 class="display-6 fw-bold mb-4">Özel Sektör & Kamu Kuruluşları</h2>
+                <p class="lead text-muted mb-4">
+                    Türkiye genelinde sağlık sektörü ve özel sektöre
+                    <strong>MyFix</strong> ve <strong>CleanPad</strong> markalarımızla güvenilir hijyen çözümleri sunuyoruz.
+                </p>
+                <h5 class="fw-semibold mb-3">Hizmet Verdiğimiz Alanlar:</h5>
+                <div class="row g-3 mb-4">
+                    <div class="col-md-6">
+                        <div class="d-flex align-items-start">
+                            <i class="bi bi-hospital text-info me-3 mt-1 fs-5"></i>
+                            <div><strong>Hastaneler</strong><p class="text-muted small mb-0">Özel ve kamu hastaneleri</p></div>
+                        </div>
+                    </div>
+                    <div class="col-md-6">
+                        <div class="d-flex align-items-start">
+                            <i class="bi bi-house-heart text-info me-3 mt-1 fs-5"></i>
+                            <div><strong>Bakım Evleri</strong><p class="text-muted small mb-0">Yaşlı ve hasta bakım merkezleri</p></div>
+                        </div>
+                    </div>
+                    <div class="col-md-6">
+                        <div class="d-flex align-items-start">
+                            <i class="bi bi-capsule text-info me-3 mt-1 fs-5"></i>
+                            <div><strong>Ecza Depoları</strong><p class="text-muted small mb-0">Medikal ürün distribütörleri</p></div>
+                        </div>
+                    </div>
+                    <div class="col-md-6">
+                        <div class="d-flex align-items-start">
+                            <i class="bi bi-shop text-info me-3 mt-1 fs-5"></i>
+                            <div><strong>Eczaneler</strong><p class="text-muted small mb-0">Perakende satış noktaları</p></div>
+                        </div>
+                    </div>
+                    <div class="col-md-6">
+                        <div class="d-flex align-items-start">
+                            <i class="bi bi-buildings text-info me-3 mt-1 fs-5"></i>
+                            <div><strong>Özel Sektör</strong><p class="text-muted small mb-0">Kurumsal şirketler ve işletmeler</p></div>
+                        </div>
+                    </div>
+                    <div class="col-md-6">
+                        <div class="d-flex align-items-start">
+                            <i class="bi bi-person-check text-info me-3 mt-1 fs-5"></i>
+                            <div><strong>Bireysel Kullanıcılar</strong><p class="text-muted small mb-0">Evde bakım ihtiyaçları</p></div>
+                        </div>
+                    </div>
+                </div>
+                <div class="bg-light rounded-3 p-4 mb-4">
+                    <p class="mb-0">
+                        <i class="bi bi-truck text-info fs-4 me-2"></i>
+                        <strong>Toptan satış</strong> ve <strong>düzenli tedarik</strong> anlaşmalarıyla
+                        kurumsal ihtiyaçlarınızı karşılıyoruz.
+                    </p>
+                </div>
+                <a href="~/Contact" class="btn btn-info btn-lg text-white"><i class="bi bi-building me-2"></i>Kurumsal Teklif Alın</a>
+            </div>
+            <div class="col-lg-6" data-aos="fade-left" data-aos-delay="200">
+                <div class="position-relative">
+                    <img src="~/Image/sev.jpeg" alt="Kurumsal Tedarik" class="img-fluid rounded-4 shadow-lg" style="max-width:450px">
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- İHRACAT SECTION -->
+<section id="export" class="section light-background py-5">
+    <div class="container">
+        <div class="row align-items-center">
+            <div class="col-lg-6 order-lg-2 mb-5 mb-lg-0" data-aos="fade-left" data-aos-delay="100">
+                <span class="badge bg-success bg-opacity-10 text-success px-3 py-2 rounded-pill mb-3">
+                    <i class="bi bi-globe me-1"></i> Uluslararası Ticaret
+                </span>
+                <h2 class="display-6 fw-bold mb-4">İhracata Uygun Üretim Altyapısı</h2>
+                <p class="lead text-muted mb-4">
+                    Marmara Hijyen, farklı ülkelerin mevzuat ve pazar gerekliliklerine uygun üretim yapabilen esnek bir altyapıya sahiptir.
+                </p>
+                <div class="row g-3 mb-4">
+                    <div class="col-md-6">
+                        <div class="d-flex align-items-start">
+                            <i class="bi bi-check-circle-fill text-success me-3 mt-1"></i>
+                            <div><strong>Uluslararası Standartlar</strong><p class="text-muted small mb-0">Pazarlara uygun ürün standartları</p></div>
+                        </div>
+                    </div>
+                    <div class="col-md-6">
+                        <div class="d-flex align-items-start">
+                            <i class="bi bi-check-circle-fill text-success me-3 mt-1"></i>
+                            <div><strong>Dış Ticaret Bilgisi</strong><p class="text-muted small mb-0">İhracat deneyimi ve uzmanlık</p></div>
+                        </div>
+                    </div>
+                    <div class="col-md-6">
+                        <div class="d-flex align-items-start">
+                            <i class="bi bi-check-circle-fill text-success me-3 mt-1"></i>
+                            <div><strong>Kalite Kontrol</strong><p class="text-muted small mb-0">Düzenli kalite kontrol süreçleri</p></div>
+                        </div>
+                    </div>
+                    <div class="col-md-6">
+                        <div class="d-flex align-items-start">
+                            <i class="bi bi-check-circle-fill text-success me-3 mt-1"></i>
+                            <div><strong>Zamanında Teslimat</strong><p class="text-muted small mb-0">Üretim ve sevkiyat planlaması</p></div>
+                        </div>
+                    </div>
+                </div>
+                <div class="bg-white rounded-3 p-4 mb-4 shadow-sm">
+                    <p class="mb-0 fst-italic">
+                        <i class="bi bi-quote text-success fs-4"></i>
+                        Amacımız, iş ortaklarımız için <strong>uzun vadeli ve güvenilir</strong> bir tedarikçi olmaktır.
+                    </p>
+                </div>
+                <a href="~/Contact" class="btn btn-success btn-lg"><i class="bi bi-globe me-2"></i>İhracat Teklifi Alın</a>
+            </div>
+            <div class="col-lg-6 order-lg-1" data-aos="fade-right" data-aos-delay="200">
+                <div class="position-relative">
+                    <img src="~/Image/unnamed.jpg" alt="Marmara Hijyen İhracat" class="img-fluid rounded-4 shadow-lg">
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- PRIVATE LABEL SECTION -->
+<section id="private-label" class="section py-5">
+    <div class="container">
+        <div class="row align-items-center">
+            <div class="col-lg-6 mb-5 mb-lg-0" data-aos="fade-right" data-aos-delay="100">
+                <span class="badge bg-warning bg-opacity-10 text-warning px-3 py-2 rounded-pill mb-3">
+                    <i class="bi bi-box-seam me-1"></i> Özel Üretim
+                </span>
+                <h2 class="display-6 fw-bold mb-4">Private Label (Özel Marka) Üretim</h2>
+                <p class="lead text-muted mb-4">
+                    Kendi markanızla pazara çıkmak istiyorsanız, <strong>Marmara Hijyen</strong> sizin için doğru üretim partneridir.
+                    Yurt içi ve yurt dışı için private label üretim yapıyoruz.
+                </p>
+                <h5 class="fw-semibold mb-3">Private Label Üretimde Sunduklarımız:</h5>
+                <div class="row g-3 mb-4">
+                    <div class="col-md-6">
+                        <div class="bg-light rounded-3 p-3 shadow-sm h-100">
+                            <i class="bi bi-rulers text-primary fs-4 mb-2 d-block"></i>
+                            <strong>Ölçü Özelleştirme</strong>
+                            <p class="text-muted small mb-0">Ürün ölçü ve teknik özellik seçimi</p>
+                        </div>
+                    </div>
+                    <div class="col-md-6">
+                        <div class="bg-light rounded-3 p-3 shadow-sm h-100">
+                            <i class="bi bi-droplet-half text-info fs-4 mb-2 d-block"></i>
+                            <strong>Gramaj Seçenekleri</strong>
+                            <p class="text-muted small mb-0">İstenilen gramajda üretim imkânı</p>
+                        </div>
+                    </div>
+                    <div class="col-md-6">
+                        <div class="bg-light rounded-3 p-3 shadow-sm h-100">
+                            <i class="bi bi-palette text-success fs-4 mb-2 d-block"></i>
+                            <strong>Ambalaj Tasarımı</strong>
+                            <p class="text-muted small mb-0">Ambalaj ve koli yapısı uyarlamaları</p>
+                        </div>
+                    </div>
+                    <div class="col-md-6">
+                        <div class="bg-light rounded-3 p-3 shadow-sm h-100">
+                            <i class="bi bi-geo-alt text-danger fs-4 mb-2 d-block"></i>
+                            <strong>Pazar Uyumu</strong>
+                            <p class="text-muted small mb-0">Hedef pazara uygun üretim planlaması</p>
+                        </div>
+                    </div>
+                </div>
+                <a href="~/Contact" class="btn btn-warning btn-lg text-dark"><i class="bi bi-box-seam me-2"></i>Private Label Teklifi</a>
+            </div>
+            <div class="col-lg-6" data-aos="fade-left" data-aos-delay="200">
+                <img src="~/Image/bb.jpg" alt="Private Label Üretim" class="img-fluid rounded-4 shadow-lg">
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- NEDEN BİZ SECTION -->
+<section id="why-us" class="section light-background py-5">
+    <div class="container">
+        <div class="text-center mb-5" data-aos="fade-up">
+            <span class="badge bg-primary bg-opacity-10 text-primary px-3 py-2 rounded-pill mb-3">Avantajlarımız</span>
+            <h2 class="display-6 fw-bold">Neden Marmara Hijyen?</h2>
+            <p class="text-muted">Biz sadece üretim yapmıyoruz; iş ortaklarımızın büyümesine katkı sağlıyoruz.</p>
+        </div>
+        <div class="row g-4">
+            <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="100">
+                <div class="card h-100 border-0 shadow-sm">
+                    <div class="card-body p-4">
+                        <div class="bg-primary text-white rounded-circle d-inline-flex align-items-center justify-content-center mb-3" style="width: 60px; height: 60px;">
+                            <i class="bi bi-award fs-4"></i>
+                        </div>
+                        <h5 class="fw-semibold">Kendi Markalarımız</h5>
+                        <p class="text-muted mb-0">MyFix ve CleanPad markalarıyla Türkiye'de güvenilir hijyen çözümleri sunuyoruz.</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="150">
+                <div class="card h-100 border-0 shadow-sm">
+                    <div class="card-body p-4">
+                        <div class="bg-success text-white rounded-circle d-inline-flex align-items-center justify-content-center mb-3" style="width: 60px; height: 60px;">
+                            <i class="bi bi-calendar-check fs-4"></i>
+                        </div>
+                        <h5 class="fw-semibold">2015'ten Bu Yana</h5>
+                        <p class="text-muted mb-0">@gecenYil yılı aşkın üretim tecrübesi ve sektör bilgisi ile hizmet veriyoruz.</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="200">
+                <div class="card h-100 border-0 shadow-sm">
+                    <div class="card-body p-4">
+                        <div class="bg-info text-white rounded-circle d-inline-flex align-items-center justify-content-center mb-3" style="width: 60px; height: 60px;">
+                            <i class="bi bi-building fs-4"></i>
+                        </div>
+                        <h5 class="fw-semibold">Kurumsal Tedarik</h5>
+                        <p class="text-muted mb-0">Hastaneler, bakım evleri, ecza depoları ve eczanelere güvenilir tedarikçi.</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="250">
+                <div class="card h-100 border-0 shadow-sm">
+                    <div class="card-body p-4">
+                        <div class="bg-warning text-dark rounded-circle d-inline-flex align-items-center justify-content-center mb-3" style="width: 60px; height: 60px;">
+                            <i class="bi bi-globe fs-4"></i>
+                        </div>
+                        <h5 class="fw-semibold">İhracat Odaklı</h5>
+                        <p class="text-muted mb-0">Uluslararası pazarlara uygun üretim altyapısı ve dış ticaret deneyimi.</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="300">
+                <div class="card h-100 border-0 shadow-sm">
+                    <div class="card-body p-4">
+                        <div class="bg-danger text-white rounded-circle d-inline-flex align-items-center justify-content-center mb-3" style="width: 60px; height: 60px;">
+                            <i class="bi bi-box-seam fs-4"></i>
+                        </div>
+                        <h5 class="fw-semibold">Private Label Esnekliği</h5>
+                        <p class="text-muted mb-0">Yurt içi ve yurt dışı için özel marka üretim esnekliği sunuyoruz.</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="350">
+                <div class="card h-100 border-0 shadow-sm">
+                    <div class="card-body p-4">
+                        <div class="bg-secondary text-white rounded-circle d-inline-flex align-items-center justify-content-center mb-3" style="width: 60px; height: 60px;">
+                            <i class="bi bi-shield-check fs-4"></i>
+                        </div>
+                        <h5 class="fw-semibold">Kalite Öncelikli</h5>
+                        <p class="text-muted mb-0">ISO sertifikalı, kalite ve hijyen odaklı üretim süreçleri.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- CTA SECTION -->
+<section id="cta" class="section py-5">
+    <div class="container">
+        <div class="card bg-primary text-white border-0 shadow-lg overflow-hidden" data-aos="fade-up">
+            <div class="card-body p-5">
+                <div class="row align-items-center">
+                    <div class="col-lg-8 mb-4 mb-lg-0">
+                        <h2 class="display-6 fw-bold mb-3">Sizin İçin Üretelim</h2>
+                        <p class="lead mb-0 opacity-90">
+                            Kurumsal tedarik, ihracat veya private label üretim için
+                            <strong>Marmara Hijyen</strong> ile iletişime geçin.
+                        </p>
+                    </div>
+                    <div class="col-lg-4 text-lg-end">
+                        <div class="d-flex flex-column flex-sm-row gap-3 justify-content-lg-end">
+                            <a href="~/Contact" class="btn btn-light btn-lg"><i class="bi bi-envelope me-2"></i>Teklif Alın</a>
+                            <a href="tel:+902126900001" class="btn btn-outline-light btn-lg"><i class="bi bi-telephone me-2"></i>Arayın</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- MİSYON VİZYON SECTION -->
+<section id="mission-vision" class="section light-background py-5">
+    <div class="container">
+        <div class="row g-4">
+            <div class="col-lg-6" data-aos="fade-up" data-aos-delay="100">
+                <div class="card h-100 border-0 shadow-sm">
+                    <div class="card-body p-5">
+                        <div class="d-flex align-items-center mb-4">
+                            <div class="bg-primary text-white rounded-circle d-flex align-items-center justify-content-center me-3" style="width: 50px; height: 50px;">
+                                <i class="bi bi-bullseye fs-5"></i>
+                            </div>
+                            <h3 class="fw-bold mb-0">Misyonumuz</h3>
+                        </div>
+                        <p class="text-muted mb-0" style="line-height: 1.8;">
+                            İnsan sağlığını, hijyen standartlarını ve yaşam kalitesini ön planda tutarak;
+                            <strong>güvenilir, kaliteli ve erişilebilir</strong> hijyen ürünleri üretmek,
+                            müşterilerimize sürdürülebilir ve katma değerli çözümler sunmak.
+                        </p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-6" data-aos="fade-up" data-aos-delay="200">
+                <div class="card h-100 border-0 shadow-sm">
+                    <div class="card-body p-5">
+                        <div class="d-flex align-items-center mb-4">
+                            <div class="bg-success text-white rounded-circle d-flex align-items-center justify-content-center me-3" style="width: 50px; height: 50px;">
+                                <i class="bi bi-eye fs-5"></i>
+                            </div>
+                            <h3 class="fw-bold mb-0">Vizyonumuz</h3>
+                        </div>
+                        <p class="text-muted mb-0" style="line-height: 1.8;">
+                            Hijyen ve bakım ürünleri sektöründe <strong>hem Türkiye'de hem uluslararası pazarlarda tercih edilen</strong>,
+                            güçlü ve güvenilir bir üretici marka olmak; teknoloji, kalite ve müşteri odaklı
+                            yaklaşımımızla sektörümüzde fark yaratmak.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- IMAGE LIGHTBOX MODAL -->
+<div id="imageLightbox" class="image-lightbox" onclick="closeLightbox()">
+    <span class="lightbox-close">&times;</span>
+    <img id="lightboxImage" src="" alt="">
+    <div class="lightbox-caption" id="lightboxCaption"></div>
+</div>
+
+@section Styles {
+    <style>
+        .product-card-large {
+            transition: all 0.3s ease;
+        }
+
+            .product-card-large:hover {
+                transform: translateY(-8px);
+                box-shadow: 0 20px 50px rgba(0,0,0,0.15) !important;
+            }
+
+        .product-image-wrapper {
+            position: relative;
+            overflow: hidden;
+            cursor: pointer;
+            background: #f8fafc;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 20px;
+            min-height: 220px;
+        }
+
+            .product-image-wrapper .product-img {
+                max-height: 220px;
+                object-fit: contain;
+                transition: transform 0.4s ease;
+            }
+
+            .product-image-wrapper:hover .product-img {
+                transform: scale(1.15);
+            }
+
+        .zoom-hint {
+            position: absolute;
+            bottom: 15px;
+            right: 15px;
+            background: rgba(255,255,255,0.95);
+            color: #333;
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 18px;
+            opacity: 0;
+            transform: scale(0.8);
+            transition: all 0.3s ease;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.15);
+        }
+
+        .product-image-wrapper:hover .zoom-hint {
+            opacity: 1;
+            transform: scale(1);
+        }
+
+        .image-lightbox {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.95);
+            z-index: 99999;
+            cursor: zoom-out;
+            animation: fadeIn 0.3s ease;
+        }
+
+            .image-lightbox.active {
+                display: flex;
+                align-items: center;
+                justify-content: center;
+            }
+
+            .image-lightbox img {
+                max-width: 90%;
+                max-height: 85%;
+                object-fit: contain;
+                border-radius: 8px;
+                box-shadow: 0 20px 60px rgba(0,0,0,0.5);
+                animation: zoomIn 0.3s ease;
+            }
+
+        .lightbox-close {
+            position: absolute;
+            top: 20px;
+            right: 30px;
+            color: #fff;
+            font-size: 50px;
+            font-weight: 300;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            z-index: 100000;
+            line-height: 1;
+        }
+
+            .lightbox-close:hover {
+                color: #3b82f6;
+                transform: rotate(90deg);
+            }
+
+        .lightbox-caption {
+            position: absolute;
+            bottom: 30px;
+            left: 50%;
+            transform: translateX(-50%);
+            color: #fff;
+            background: rgba(0,0,0,0.7);
+            padding: 12px 30px;
+            border-radius: 30px;
+            font-size: 14px;
+            font-weight: 500;
+        }
+
+        @@keyframes fadeIn {
+            from {
+                opacity: 0;
+            }
+
+            to {
+                opacity: 1;
+            }
+        }
+
+        @@keyframes zoomIn {
+            from {
+                opacity: 0;
+                transform: scale(0.7);
+            }
+
+            to {
+                opacity: 1;
+                transform: scale(1);
+            }
+        }
+    </style>
+}
+
+@section Scripts {
+    <script>
+        function openLightbox(wrapper) {
+            const img = wrapper.querySelector('.product-img');
+            const lightbox = document.getElementById('imageLightbox');
+            const lightboxImg = document.getElementById('lightboxImage');
+            const caption = document.getElementById('lightboxCaption');
+            lightboxImg.src = img.src;
+            caption.textContent = img.getAttribute('data-title') || img.alt;
+            lightbox.classList.add('active');
+            document.body.style.overflow = 'hidden';
+        }
+        function closeLightbox() {
+            document.getElementById('imageLightbox').classList.remove('active');
+            document.body.style.overflow = '';
+        }
+        document.addEventListener('keydown', function(e) {
+            if (e.key === 'Escape') closeLightbox();
+        });
+    </script>
+}

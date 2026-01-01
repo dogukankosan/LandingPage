@@ -1,0 +1,605 @@
+﻿@model MarmaraHijyen.Models.ContactFormModel
+@{
+    ViewData["Title"] = "İletişim";
+    ViewData["Description"] = "Marmara Hijyen ile iletişime geçin. İhracat ve private label üretim teklifi alın.";
+    ViewData["Keywords"] = "marmara hijyen iletişim, hijyen ürünleri teklif, private label teklif";
+    ViewData["ActivePage"] = "Contact";
+}
+<br />
+<br />
+<br />
+<br />
+<br />
+
+<!-- PAGE TITLE -->
+<section class="page-title position-relative overflow-hidden py-5" style="background: linear-gradient(135deg, #f0f7ff 0%, #e0ecff 100%);">
+    <div class="container position-relative">
+        <div class="row align-items-center">
+            <div class="col-lg-8">
+                <h1 class="display-4 fw-bold mb-3" data-aos="fade-right">Bizimle <span class="text-primary">İletişime</span> Geçin</h1>
+                <p class="lead text-muted mb-0" data-aos="fade-right" data-aos-delay="100">
+                    Sorularınızı yanıtlayalım, size özel teklif hazırlayalım.
+                </p>
+            </div>
+            <div class="col-lg-4 text-lg-end mt-4 mt-lg-0" data-aos="fade-left">
+                <div class="d-inline-flex align-items-center bg-white rounded-pill px-4 py-3 shadow-sm">
+                    <i class="bi bi-headset text-primary fs-3 me-3"></i>
+                    <div class="text-start">
+                        <small class="text-muted d-block">Destek Hattı</small>
+                        <a href="tel:+902126900001" class="fw-bold text-dark text-decoration-none">+90 212 690 00 01</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- CONTACT INFO CARDS -->
+<section class="contact-info py-5">
+    <div class="container">
+        <div class="row g-4">
+            <!-- Adres -->
+            <div class="col-lg-3 col-md-6" data-aos="fade-up" data-aos-delay="100">
+                <div class="card h-100 border-0 shadow-sm text-center p-4 contact-card">
+                    <div class="card-body">
+                        <div class="icon-box bg-primary bg-opacity-10 rounded-circle d-inline-flex align-items-center justify-content-center mb-3" style="width: 70px; height: 70px;">
+                            <i class="bi bi-geo-alt text-primary fs-2"></i>
+                        </div>
+                        <h5 class="fw-bold mb-3">Adres</h5>
+                        <p class="text-muted mb-3">Akçaburgaz Mah. Ahmet Yesevi Cad.<br>No:1/1 Esenyurt / İstanbul</p>
+                        <a href="https://maps.google.com/?q=Esenyurt+İstanbul" target="_blank" class="btn btn-sm btn-primary rounded-pill">
+                            <i class="bi bi-map me-1"></i> Yol Tarifi
+                        </a>
+                    </div>
+                </div>
+            </div>
+            <!-- Telefon -->
+            <div class="col-lg-3 col-md-6" data-aos="fade-up" data-aos-delay="150">
+                <div class="card h-100 border-0 shadow-sm text-center p-4 contact-card">
+                    <div class="card-body">
+                        <div class="icon-box bg-success bg-opacity-10 rounded-circle d-inline-flex align-items-center justify-content-center mb-3" style="width: 70px; height: 70px;">
+                            <i class="bi bi-telephone text-success fs-2"></i>
+                        </div>
+                        <h5 class="fw-bold mb-3">Telefon</h5>
+                        <p class="text-muted mb-1"><a href="tel:+902126900001" class="text-decoration-none text-dark">+90 212 690 00 01</a></p>
+                        <small class="text-muted d-block mb-3">Pzt-Cuma: 09:00-18:00</small>
+                        <a href="tel:+902126900001" class="btn btn-sm btn-success rounded-pill"><i class="bi bi-telephone-fill me-1"></i> Ara</a>
+                    </div>
+                </div>
+            </div>
+            <!-- E-posta -->
+            <div class="col-lg-3 col-md-6" data-aos="fade-up" data-aos-delay="200">
+                <div class="card h-100 border-0 shadow-sm text-center p-4 contact-card">
+                    <div class="card-body">
+                        <div class="icon-box bg-info bg-opacity-10 rounded-circle d-inline-flex align-items-center justify-content-center mb-3" style="width: 70px; height: 70px;">
+                            <i class="bi bi-envelope text-info fs-2"></i>
+                        </div>
+                        <h5 class="fw-bold mb-3">E-posta</h5>
+                        <p class="text-muted mb-1"><a href="mailto:info@marmarahijyen.com" class="text-decoration-none text-dark">info@marmarahijyen.com</a></p>
+                        <small class="text-muted d-block mb-3">7/24 yazabilirsiniz</small>
+                        <a href="mailto:info@marmarahijyen.com" class="btn btn-sm btn-info text-white rounded-pill"><i class="bi bi-envelope-fill me-1"></i> Yaz</a>
+                    </div>
+                </div>
+            </div>
+            <!-- WhatsApp -->
+            <div class="col-lg-3 col-md-6" data-aos="fade-up" data-aos-delay="250">
+                <div class="card h-100 border-0 shadow-sm text-center p-4 contact-card">
+                    <div class="card-body">
+                        <div class="icon-box bg-success rounded-circle d-inline-flex align-items-center justify-content-center mb-3" style="width: 70px; height: 70px;">
+                            <i class="bi bi-whatsapp text-white fs-2"></i>
+                        </div>
+                        <h5 class="fw-bold mb-3">WhatsApp</h5>
+                        <p class="text-muted mb-1">+90 212 690 00 01</p>
+                        <small class="text-muted d-block mb-3">Hızlı yanıt</small>
+                        <a href="https://wa.me/902126900001" target="_blank" class="btn btn-sm btn-success rounded-pill"><i class="bi bi-whatsapp me-1"></i> Yaz</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- CONTACT FORM SECTION -->
+<section class="contact-form-section py-5" style="background: linear-gradient(180deg, #f8fafc 0%, #f1f5f9 100%);">
+    <div class="container">
+        <div class="row g-5">
+            <!-- Form -->
+            <div class="col-lg-7" data-aos="fade-right">
+                <div class="card border-0 shadow-lg rounded-4 overflow-hidden">
+                    <div class="card-header bg-primary text-white p-4" style="background: linear-gradient(135deg, #1e40af 0%, #3b82f6 100%) !important;">
+                        <div class="d-flex align-items-center">
+                            <div class="bg-white bg-opacity-20 rounded-circle d-flex align-items-center justify-content-center me-3" style="width: 50px; height: 50px;">
+                                <i class="bi bi-envelope-paper fs-4"></i>
+                            </div>
+                            <div>
+                                <h4 class="mb-1 fw-bold">İletişim Formu</h4>
+                                <p class="mb-0 opacity-90 small">24 saat içinde dönüş yapıyoruz</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="card-body p-4 p-lg-5">
+                        @if (TempData["Success"] != null)
+                        {
+                            <div class="alert alert-success alert-dismissible fade show" role="alert">
+                                <i class="bi bi-check-circle-fill me-2"></i>@TempData["Success"]
+                                <button type="button" class="btn-close" data-bs-dismiss="alert"></button>
+                            </div>
+                        }
+                        @if (TempData["Error"] != null)
+                        {
+                            <div class="alert alert-danger alert-dismissible fade show" role="alert">
+                                <i class="bi bi-exclamation-triangle-fill me-2"></i>@TempData["Error"]
+                                <button type="button" class="btn-close" data-bs-dismiss="alert"></button>
+                            </div>
+                        }
+
+                        <form asp-action="SendMessage" asp-controller="Contact" method="post" id="contactForm" novalidate>
+                            @Html.AntiForgeryToken()
+                            <!-- Honeypot -->
+                            <div style="position:absolute;left:-9999px;" aria-hidden="true">
+                                <input type="text" name="website" tabindex="-1" autocomplete="off">
+                            </div>
+                            <input type="hidden" name="formTimestamp" id="formTimestamp" value="">
+
+                            <div class="row g-4">
+                                <div class="col-md-6">
+                                    <label asp-for="FullName" class="form-label fw-semibold">
+                                        <i class="bi bi-person text-primary me-1"></i>Ad Soyad <span class="text-danger">*</span>
+                                    </label>
+                                    <input asp-for="FullName" class="form-control form-control-lg" placeholder="Adınız Soyadınız" required>
+                                    <span asp-validation-for="FullName" class="text-danger small"></span>
+                                </div>
+                                <div class="col-md-6">
+                                    <label asp-for="Company" class="form-label fw-semibold">
+                                        <i class="bi bi-building text-primary me-1"></i>Firma
+                                    </label>
+                                    <input asp-for="Company" class="form-control form-control-lg" placeholder="Firma adınız">
+                                </div>
+                                <div class="col-md-6">
+                                    <label asp-for="Email" class="form-label fw-semibold">
+                                        <i class="bi bi-envelope text-primary me-1"></i>E-posta <span class="text-danger">*</span>
+                                    </label>
+                                    <input asp-for="Email" type="email" class="form-control form-control-lg" placeholder="ornek@firma.com" required>
+                                    <span asp-validation-for="Email" class="text-danger small"></span>
+                                </div>
+                                <div class="col-md-6">
+                                    <label asp-for="Phone" class="form-label fw-semibold">
+                                        <i class="bi bi-telephone text-primary me-1"></i>Telefon <span class="text-danger">*</span>
+                                    </label>
+                                    <input asp-for="Phone" type="tel" class="form-control form-control-lg" placeholder="+90 5XX XXX XX XX" required>
+                                    <span asp-validation-for="Phone" class="text-danger small"></span>
+                                </div>
+                                <div class="col-md-6">
+                                    <label asp-for="Country" class="form-label fw-semibold">
+                                        <i class="bi bi-globe text-primary me-1"></i>Ülke
+                                    </label>
+                                    <select asp-for="Country" class="form-select form-select-lg">
+                                        <option value="">Seçiniz...</option>
+                                        <option value="Türkiye">🇹🇷 Türkiye</option>
+                                        <option value="Almanya">🇩🇪 Almanya</option>
+                                        <option value="Fransa">🇫🇷 Fransa</option>
+                                        <option value="İngiltere">🇬🇧 İngiltere</option>
+                                        <option value="Suudi Arabistan">🇸🇦 Suudi Arabistan</option>
+                                        <option value="BAE">🇦🇪 BAE</option>
+                                        <option value="Irak">🇮🇶 Irak</option>
+                                        <option value="Mısır">🇪🇬 Mısır</option>
+                                        <option value="Libya">🇱🇾 Libya</option>
+                                        <option value="Rusya">🇷🇺 Rusya</option>
+                                        <option value="Diğer">🌍 Diğer</option>
+                                    </select>
+                                </div>
+                                <div class="col-md-6">
+                                    <label asp-for="Subject" class="form-label fw-semibold">
+                                        <i class="bi bi-tag text-primary me-1"></i>Konu <span class="text-danger">*</span>
+                                    </label>
+                                    <select asp-for="Subject" class="form-select form-select-lg" required>
+                                        <option value="">Seçiniz...</option>
+                                        <option value="Genel Bilgi">📋 Genel Bilgi</option>
+                                        <option value="Fiyat Teklifi">💰 Fiyat Teklifi</option>
+                                        <option value="Private Label">🏷️ Private Label</option>
+                                        <option value="İhracat">🌍 İhracat</option>
+                                        <option value="Numune Talebi">📦 Numune Talebi</option>
+                                        <option value="Distribütörlük">🤝 Distribütörlük</option>
+                                        <option value="Diğer">📝 Diğer</option>
+                                    </select>
+                                    <span asp-validation-for="Subject" class="text-danger small"></span>
+                                </div>
+                                <div class="col-12">
+                                    <label asp-for="Message" class="form-label fw-semibold">
+                                        <i class="bi bi-chat-text text-primary me-1"></i>Mesaj <span class="text-danger">*</span>
+                                    </label>
+                                    <textarea asp-for="Message" class="form-control form-control-lg" rows="5" placeholder="Mesajınız..." required></textarea>
+                                    <span asp-validation-for="Message" class="text-danger small"></span>
+                                    <div class="form-text"><span id="charCount">0</span>/5000</div>
+                                </div>
+                                <div class="col-12">
+                                    <div class="d-flex align-items-center p-3 rounded-3" style="background:#f0f7ff;">
+                                        <i class="bi bi-shield-check text-primary fs-4 me-3"></i>
+                                        <small class="text-muted">Bu form güvenlik sistemi ile korunmaktadır.</small>
+                                    </div>
+                                </div>
+                                <div class="col-12">
+                                    <button type="submit" class="btn btn-primary btn-lg w-100 py-3 rounded-3" id="submitBtn">
+                                        <span class="btn-text"><i class="bi bi-send me-2"></i>Gönder</span>
+                                        <span class="btn-loading d-none"><span class="spinner-border spinner-border-sm me-2"></span>Gönderiliyor...</span>
+                                    </button>
+                                </div>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Sağ - Harita & Bilgi -->
+            <div class="col-lg-5" data-aos="fade-left">
+                <div class="card border-0 shadow-lg rounded-4 mb-4 overflow-hidden">
+                    <div class="ratio ratio-4x3">
+                        <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3008.88!2d28.67!3d41.02!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2sEsenyurt!5e0!3m2!1str!2str" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
+                    </div>
+                </div>
+                <div class="card border-0 shadow-sm rounded-4 mb-4">
+                    <div class="card-body p-4">
+                        <h5 class="fw-bold mb-3"><i class="bi bi-clock text-warning me-2"></i>Çalışma Saatleri</h5>
+                        <ul class="list-unstyled mb-0">
+                            <li class="d-flex justify-content-between py-2 border-bottom">
+                                <span>Pazartesi - Cuma</span>
+                                <span class="badge bg-success rounded-pill">09:00 - 18:00</span>
+                            </li>
+                            <li class="d-flex justify-content-between py-2 border-bottom">
+                                <span>Cumartesi</span>
+                                <span class="badge bg-warning text-dark rounded-pill">10:00 - 14:00</span>
+                            </li>
+                            <li class="d-flex justify-content-between py-2">
+                                <span>Pazar</span>
+                                <span class="badge bg-danger rounded-pill">Kapalı</span>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="card border-0 shadow-lg rounded-4" style="background: linear-gradient(135deg, #1e40af 0%, #3b82f6 100%);">
+                    <div class="card-body p-4 text-white">
+                        <h5 class="fw-bold mb-3"><i class="bi bi-lightning-charge-fill me-2"></i>Acil mi?</h5>
+                        <p class="opacity-90 mb-4">Hemen arayın veya WhatsApp'tan yazın.</p>
+                        <div class="d-grid gap-2">
+                            <a href="tel:+902126900001" class="btn btn-light btn-lg rounded-3">
+                                <i class="bi bi-telephone-fill me-2 text-primary"></i><span class="text-primary fw-bold">+90 212 690 00 01</span>
+                            </a>
+                            <a href="https://wa.me/902126900001" target="_blank" class="btn btn-success btn-lg rounded-3">
+                                <i class="bi bi-whatsapp me-2"></i>WhatsApp
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- FAQ -->
+<section class="faq-section py-5">
+    <div class="container">
+        <div class="text-center mb-5" data-aos="fade-up">
+            <span class="badge bg-info bg-opacity-10 text-info px-4 py-2 rounded-pill mb-3">SSS</span>
+            <h2 class="display-6 fw-bold">Sıkça Sorulan Sorular</h2>
+        </div>
+        <div class="row justify-content-center">
+            <div class="col-lg-9">
+                <div class="accordion" id="faqAccordion">
+
+                    <!-- Soru 1 -->
+                    <div class="accordion-item border rounded-4 mb-3 shadow-sm">
+                        <h2 class="accordion-header">
+                            <button class="accordion-button rounded-4" type="button" data-bs-toggle="collapse" data-bs-target="#faq1">
+                                <i class="bi bi-box-seam text-primary me-3"></i>Minimum sipariş miktarı nedir?
+                            </button>
+                        </h2>
+                        <div id="faq1" class="accordion-collapse collapse show" data-bs-parent="#faqAccordion">
+                            <div class="accordion-body text-muted">
+                                Genellikle 1 konteyner (20ft/40ft) bazında çalışıyoruz. Yurt içi kurumsal siparişlerde daha düşük miktarlarla da çalışabiliyoruz. Detaylı bilgi için bizimle iletişime geçebilirsiniz.
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Soru 2 -->
+                    <div class="accordion-item border rounded-4 mb-3 shadow-sm">
+                        <h2 class="accordion-header">
+                            <button class="accordion-button collapsed rounded-4" type="button" data-bs-toggle="collapse" data-bs-target="#faq2">
+                                <i class="bi bi-tags text-primary me-3"></i>Private label üretim yapıyor musunuz?
+                            </button>
+                        </h2>
+                        <div id="faq2" class="accordion-collapse collapse" data-bs-parent="#faqAccordion">
+                            <div class="accordion-body text-muted">
+                                Evet, tüm ürünlerde yurt içi ve yurt dışı için private label üretim yapıyoruz. Ambalaj tasarımı desteği veriyor, ürün ölçüleri ve gramaj seçeneklerini ihtiyacınıza göre özelleştirebiliyoruz.
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Soru 3 -->
+                    <div class="accordion-item border rounded-4 mb-3 shadow-sm">
+                        <h2 class="accordion-header">
+                            <button class="accordion-button collapsed rounded-4" type="button" data-bs-toggle="collapse" data-bs-target="#faq3">
+                                <i class="bi bi-globe text-primary me-3"></i>Hangi ülkelere ihracat yapıyorsunuz?
+                            </button>
+                        </h2>
+                        <div id="faq3" class="accordion-collapse collapse" data-bs-parent="#faqAccordion">
+                            <div class="accordion-body text-muted">
+                                Avrupa, Orta Doğu ve Afrika başta olmak üzere 50+ ülkeye ihracat yapıyoruz. Her ülkenin mevzuat ve pazar gerekliliklerine uygun üretim yapabilecek esnek bir altyapıya sahibiz.
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Soru 4 -->
+                    <div class="accordion-item border rounded-4 mb-3 shadow-sm">
+                        <h2 class="accordion-header">
+                            <button class="accordion-button collapsed rounded-4" type="button" data-bs-toggle="collapse" data-bs-target="#faq4">
+                                <i class="bi bi-truck text-primary me-3"></i>Teslimat süresi ne kadardır?
+                            </button>
+                        </h2>
+                        <div id="faq4" class="accordion-collapse collapse" data-bs-parent="#faqAccordion">
+                            <div class="accordion-body text-muted">
+                                Standart siparişlerde 2-3 hafta, private label üretimlerde 4-6 hafta teslimat süresi uygulanmaktadır. EXW, FOB, CIF ve DDP teslim şekillerinde çalışıyoruz.
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Soru 5 -->
+                    <div class="accordion-item border rounded-4 mb-3 shadow-sm">
+                        <h2 class="accordion-header">
+                            <button class="accordion-button collapsed rounded-4" type="button" data-bs-toggle="collapse" data-bs-target="#faq5">
+                                <i class="bi bi-award text-primary me-3"></i>
+                                MyFix ve CleanPad markaları nedir?
+                            </button>
+                        </h2>
+                        <div id="faq5" class="accordion-collapse collapse" data-bs-parent="#faqAccordion">
+                            <div class="accordion-body text-muted">
+                                MyFix ve CleanPad, Marmara Hijyen’in tescilli markalarıdır.
+                                Medikal ve hasta bakım ürünleri ile temizlik ve hijyen ürünleri kapsamında;
+                                underpad (hasta altı bezi), bağlama ürünleri ile vücut ve yüzey temizleme
+                                mendilleri başta olmak üzere çeşitli ürün gruplarında kullanılmaktadır.
+                            </div>
+                        </div>
+                    </div>
+
+
+
+                    <!-- Soru 6 -->
+                    <div class="accordion-item border rounded-4 mb-3 shadow-sm">
+                        <h2 class="accordion-header">
+                            <button class="accordion-button collapsed rounded-4" type="button" data-bs-toggle="collapse" data-bs-target="#faq6">
+                                <i class="bi bi-hospital text-primary me-3"></i>Hangi kurumlara hizmet veriyorsunuz?
+                            </button>
+                        </h2>
+                        <div id="faq6" class="accordion-collapse collapse" data-bs-parent="#faqAccordion">
+                            <div class="accordion-body text-muted">
+                                Türkiye genelinde özel ve kamu hastaneleri, bakım evleri, ecza depoları, eczaneler ve özel sektör firmalarına hizmet veriyoruz. Bireysel kullanıcılar için de eczaneler aracılığıyla ürünlerimize ulaşılabilmektedir.
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Soru 7 -->
+                    <div class="accordion-item border rounded-4 mb-3 shadow-sm">
+                        <h2 class="accordion-header">
+                            <button class="accordion-button collapsed rounded-4" type="button" data-bs-toggle="collapse" data-bs-target="#faq7">
+                                <i class="bi bi-patch-check text-primary me-3"></i>Hangi kalite sertifikalarına sahipsiniz?
+                            </button>
+                        </h2>
+                        <div id="faq7" class="accordion-collapse collapse" data-bs-parent="#faqAccordion">
+                            <div class="accordion-body text-muted">
+                                ISO 9001 (Kalite Yönetimi), ISO 14001 (Çevre Yönetimi), CE (Avrupa Uyumu), GMP (İyi Üretim Uygulamaları) ve TSE (Türk Standartları) belgelerine sahibiz. Tüm ürünlerimiz uluslararası kalite standartlarına uygun olarak üretilmektedir.
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Soru 8 -->
+                    <div class="accordion-item border rounded-4 mb-3 shadow-sm">
+                        <h2 class="accordion-header">
+                            <button class="accordion-button collapsed rounded-4" type="button" data-bs-toggle="collapse" data-bs-target="#faq8">
+                                <i class="bi bi-rulers text-primary me-3"></i>Ürün ölçü ve gramajlarını özelleştirebilir misiniz?
+                            </button>
+                        </h2>
+                        <div id="faq8" class="accordion-collapse collapse" data-bs-parent="#faqAccordion">
+                            <div class="accordion-body text-muted">
+                                Evet, müşteri taleplerine göre ürün ölçülerini, gramajlarını ve emicilik kapasitelerini özelleştirebiliyoruz. Underpad'lerde 60×90 cm ve 90×180 cm standart ebatlarımız mevcut, farklı boyutlar için görüşebiliriz. Hasta altı bezlerinde S, M, L, XL beden seçenekleri sunuyoruz.
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Soru 9 -->
+                    <div class="accordion-item border rounded-4 mb-3 shadow-sm">
+                        <h2 class="accordion-header">
+                            <button class="accordion-button collapsed rounded-4" type="button" data-bs-toggle="collapse" data-bs-target="#faq9">
+                                <i class="bi bi-currency-exchange text-primary me-3"></i>Ödeme koşullarınız nelerdir?
+                            </button>
+                        </h2>
+                        <div id="faq9" class="accordion-collapse collapse" data-bs-parent="#faqAccordion">
+                            <div class="accordion-body text-muted">
+                                İhracat siparişlerinde genellikle T/T (banka havalesi), L/C (akreditif) ile çalışıyoruz. Yurt içi kurumsal müşterilerimiz için vadeli ödeme seçenekleri de sunabiliyoruz. Detaylı ödeme koşulları sipariş hacmine göre değişiklik gösterebilir.
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Soru 10 -->
+                    <div class="accordion-item border rounded-4 mb-3 shadow-sm">
+                        <h2 class="accordion-header">
+                            <button class="accordion-button collapsed rounded-4" type="button" data-bs-toggle="collapse" data-bs-target="#faq10">
+                                <i class="bi bi-send-check text-primary me-3"></i>Numune gönderimi yapıyor musunuz?
+                            </button>
+                        </h2>
+                        <div id="faq10" class="accordion-collapse collapse" data-bs-parent="#faqAccordion">
+                            <div class="accordion-body text-muted">
+                                Evet, potansiyel iş ortaklarımıza ürün numuneleri gönderiyoruz. Numune taleplerinizi iletişim formumuz veya e-posta aracılığıyla bize iletebilirsiniz. Kargo ücreti alıcıya aittir.
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Soru 11 -->
+                    <div class="accordion-item border rounded-4 mb-3 shadow-sm">
+                        <h2 class="accordion-header">
+                            <button class="accordion-button collapsed rounded-4" type="button" data-bs-toggle="collapse" data-bs-target="#faq11">
+                                <i class="bi bi-recycle text-primary me-3"></i>Ürünleriniz çevre dostu mu?
+                            </button>
+                        </h2>
+                        <div id="faq11" class="accordion-collapse collapse" data-bs-parent="#faqAccordion">
+                            <div class="accordion-body text-muted">
+                                Sürdürülebilirlik bizim için önemli bir değerdir. Üretim süreçlerimizde çevreye duyarlı yaklaşımlar benimsiyoruz. ISO 14001 Çevre Yönetim Sistemi sertifikamız bulunmaktadır. Ambalajlarımızda geri dönüştürülebilir malzemeler kullanmaya özen gösteriyoruz.
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Soru 12 -->
+                    <div class="accordion-item border rounded-4 shadow-sm">
+                        <h2 class="accordion-header">
+                            <button class="accordion-button collapsed rounded-4" type="button" data-bs-toggle="collapse" data-bs-target="#faq12">
+                                <i class="bi bi-headset text-primary me-3"></i>Satış sonrası destek sağlıyor musunuz?
+                            </button>
+                        </h2>
+                        <div id="faq12" class="accordion-collapse collapse" data-bs-parent="#faqAccordion">
+                            <div class="accordion-body text-muted">
+                                Evet, tüm müşterilerimize satış sonrası destek sağlıyoruz. Ürün kalitesi, teslimat veya herhangi bir konuda sorun yaşarsanız müşteri hizmetlerimiz size yardımcı olacaktır. Uzun vadeli iş ortaklıkları kurmak bizim önceliğimizdir.
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+@section Styles {
+    <style>
+        .contact-card {
+            transition: all 0.4s ease;
+            border-radius: 20px !important;
+        }
+
+            .contact-card:hover {
+                transform: translateY(-10px);
+                box-shadow: 0 25px 50px rgba(0,0,0,0.15) !important;
+            }
+
+                .contact-card:hover .icon-box {
+                    transform: scale(1.1);
+                }
+
+        .icon-box {
+            transition: all 0.3s ease;
+        }
+
+        .form-control, .form-select {
+            border: 2px solid #e2e8f0;
+            border-radius: 12px;
+            padding: 12px 16px;
+            transition: all 0.3s;
+        }
+
+            .form-control:focus, .form-select:focus {
+                border-color: #3b82f6;
+                box-shadow: 0 0 0 4px rgba(59,130,246,0.1);
+            }
+
+            .form-control.is-invalid {
+                border-color: #ef4444;
+            }
+
+            .form-control.is-valid {
+                border-color: #22c55e;
+            }
+
+        #submitBtn {
+            background: linear-gradient(135deg, #1e40af 0%, #3b82f6 100%);
+            border: none;
+            font-weight: 600;
+            transition: all 0.3s;
+        }
+
+            #submitBtn:hover:not(:disabled) {
+                transform: translateY(-2px);
+                box-shadow: 0 10px 30px rgba(59,130,246,0.4);
+            }
+
+            #submitBtn:disabled {
+                opacity: 0.7;
+            }
+
+        .accordion-button {
+            padding: 18px 22px;
+            background: #fff;
+        }
+
+            .accordion-button:not(.collapsed) {
+                background: linear-gradient(135deg, #eff6ff 0%, #dbeafe 100%);
+                color: #1e40af;
+                box-shadow: none;
+            }
+
+            .accordion-button:focus {
+                box-shadow: none;
+            }
+    </style>
+}
+
+@section Scripts {
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const form = document.getElementById('contactForm');
+            const submitBtn = document.getElementById('submitBtn');
+            const btnText = submitBtn.querySelector('.btn-text');
+            const btnLoading = submitBtn.querySelector('.btn-loading');
+            const messageField = document.querySelector('textarea[name="Message"]');
+            const charCount = document.getElementById('charCount');
+            const timestampField = document.getElementById('formTimestamp');
+
+            // Bot protection timestamp
+            timestampField.value = Date.now();
+
+            // Char counter
+            if (messageField && charCount) {
+                messageField.addEventListener('input', function() {
+                    charCount.textContent = this.value.length;
+                });
+            }
+
+            // Form submit
+            form.addEventListener('submit', function(e) {
+                // Honeypot check
+                const honeypot = form.querySelector('input[name="website"]');
+                if (honeypot && honeypot.value !== '') {
+                    e.preventDefault();
+                    return false;
+                }
+
+                // Time check (min 3 sec)
+                const submitTime = Date.now();
+                const loadTime = parseInt(timestampField.value);
+                if ((submitTime - loadTime) < 3000) {
+                    e.preventDefault();
+                    alert('Lütfen formu dikkatlice doldurunuz.');
+                    return false;
+                }
+
+                // Validation
+                if (!form.checkValidity()) {
+                    e.preventDefault();
+                    const invalidFields = form.querySelectorAll(':invalid');
+                    invalidFields.forEach(f => f.classList.add('is-invalid'));
+                    if (invalidFields.length > 0) invalidFields[0].focus();
+                    return false;
+                }
+
+                // Loading
+                submitBtn.disabled = true;
+                btnText.classList.add('d-none');
+                btnLoading.classList.remove('d-none');
+            });
+
+            // Clear invalid on input
+            form.querySelectorAll('.form-control, .form-select').forEach(field => {
+                field.addEventListener('input', function() {
+                    this.classList.remove('is-invalid');
+                    if (this.checkValidity()) this.classList.add('is-valid');
+                });
+            });
+        });
+    </script>
+    @await Html.PartialAsync("_ValidationScriptsPartial")
+}
