@@ -1,5 +1,8 @@
 # 🏢 Marmara Hijyen - Kurumsal Web Sitesi
 
+<img width="1601" height="896" alt="Screenshot_1" src="https://github.com/user-attachments/assets/4a49357d-89d8-4f75-ab70-843c110a8ce6" />
+
+
 ![.NET](https://img.shields.io/badge/.NET-8.0-512BD4?logo=dotnet)
 ![ASP.NET Core](https://img.shields.io/badge/ASP.NET%20Core-MVC-512BD4?logo=dotnet)
 ![License](https://img.shields.io/badge/License-MIT-green)
@@ -894,26 +897,6 @@ Tüm katkıda bulunanlara teşekkürler! 🙏
 - [ ] Automated email campaigns
 - [ ] Performance optimizations
 
----
-
-## 📸 Ekran Görüntüleri
-
-### Ana Sayfa
-![Ana Sayfa](docs/screenshots/home.png)
-
-### İletişim Formu
-![İletişim Formu](docs/screenshots/contact.png)
-
-### Email Template
-![Email Template](docs/screenshots/email-template.png)
-
-### Ürünler
-![Ürünler](docs/screenshots/products.png)
-
-### Responsive Design
-![Responsive](docs/screenshots/responsive.png)
-
----
 
 ## 🔗 Faydalı Linkler
 
