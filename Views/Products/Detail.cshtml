@@ -1,0 +1,375 @@
+﻿@using MarmaraHijyen.Controllers
+@model ProductDetailViewModel
+@{
+    ViewData["Title"] = Model.Name + " - " + Model.Brand;
+    ViewData["Description"] = Model.ShortDescription;
+    ViewData["Keywords"] = $"{Model.Name}, {Model.Brand}, {Model.Category}, {Model.SubCategory}";
+    ViewData["ActivePage"] = "Products";
+}
+
+<br />
+<br />
+<br />
+<br />
+<br />
+
+<!-- ==================== BREADCRUMB ==================== -->
+<section class="breadcrumb-section py-3 bg-light">
+    <div class="container-fluid px-4 px-lg-5">
+        <nav aria-label="breadcrumb">
+            <ol class="breadcrumb mb-0">
+                <li class="breadcrumb-item"><a href="~/">Anasayfa</a></li>
+                <li class="breadcrumb-item"><a href="~/Products">Ürünler</a></li>
+                <li class="breadcrumb-item"><a href="~/Products#@Model.Category.ToLower()">@Model.Category</a></li>
+                <li class="breadcrumb-item active" aria-current="page">@Model.Name</li>
+            </ol>
+        </nav>
+    </div>
+</section>
+<!-- /BREADCRUMB -->
+<!-- ==================== PRODUCT DETAIL ==================== -->
+<section class="product-detail py-5">
+    <div class="container-fluid px-4 px-lg-5">
+        <div class="row g-5">
+
+            <!-- Sol Taraf - Ürün Görseli -->
+            <div class="col-lg-6" data-aos="fade-right">
+                <div class="product-image-section sticky-top" style="top: 100px;">
+                    <!-- Ana Görsel -->
+                    <div class="main-image-wrapper bg-light rounded-4 p-5 mb-3 position-relative overflow-hidden">
+                        <img src="@Model.MainImage" alt="@Model.Name" class="img-fluid main-product-image" id="mainImage">
+
+                        <!-- Badges -->
+                        <div class="position-absolute top-0 start-0 m-4">
+                            <span class="badge bg-@(Model.Brand == "CleanPad" ? "success" : "primary") rounded-pill shadow-lg mb-2 d-block">
+                                <i class="bi bi-@(Model.Brand == "CleanPad" ? "check-circle-fill" : "stars") me-1"></i>
+                                @Model.Brand
+                            </span>
+                            @if (Model.IsAvailableForExport)
+                            {
+                                <span class="badge bg-info rounded-pill shadow-lg mb-2 d-block">
+                                    <i class="bi bi-globe me-1"></i>İhracata Uygun
+                                </span>
+                            }
+                            @if (Model.IsPrivateLabelAvailable)
+                            {
+                                <span class="badge bg-warning text-dark rounded-pill shadow-lg d-block">
+                                    <i class="bi bi-tag-fill me-1"></i>Private Label
+                                </span>
+                            }
+                        </div>
+                    </div>
+
+                    <!-- Thumbnail Gallery (Eğer birden fazla resim varsa) -->
+                    @if (Model.Images.Count > 1)
+                    {
+                        <div class="thumbnail-gallery d-flex gap-2">
+                            @foreach (var image in Model.Images)
+                            {
+                                <div class="thumbnail-item bg-light rounded-3 p-3 cursor-pointer" onclick="changeImage('@image')">
+                                    <img src="@image" alt="@Model.Name" class="img-fluid" style="max-height: 80px;">
+                                </div>
+                            }
+                        </div>
+                    }
+                </div>
+            </div>
+
+            <!-- Sağ Taraf - Ürün Bilgileri -->
+            <div class="col-lg-6" data-aos="fade-left">
+
+                <!-- Ürün Başlık -->
+                <div class="product-header mb-4">
+                    <div class="d-flex align-items-center gap-2 mb-2">
+                        <span class="badge bg-@(Model.Category == "Medikal" ? "danger" : Model.Category == "Hijyen" ? "info" : Model.Category == "Bebek" ? "warning" : "success") bg-opacity-25 text-dark px-3 py-2">
+                            @Model.Category
+                        </span>
+                        <span class="text-muted">•</span>
+                        <span class="text-muted">@Model.SubCategory</span>
+                    </div>
+                    <h1 class="display-5 fw-bold mb-2">@Model.Name</h1>
+                    <p class="lead text-muted mb-0">@Model.ShortDescription</p>
+                </div>
+
+                <!-- Hızlı Bilgiler -->
+                <div class="quick-info-grid mb-4">
+                    <div class="row g-3">
+                        <div class="col-6">
+                            <div class="info-card bg-light rounded-3 p-3 h-100">
+                                <div class="d-flex align-items-center">
+                                    <i class="bi bi-box-seam text-primary fs-3 me-3"></i>
+                                    <div>
+                                        <small class="text-muted d-block">Paket İçeriği</small>
+                                        <strong>@Model.PackSize</strong>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        @if (!string.IsNullOrEmpty(Model.Size))
+                        {
+                            <div class="col-6">
+                                <div class="info-card bg-light rounded-3 p-3 h-100">
+                                    <div class="d-flex align-items-center">
+                                        <i class="bi bi-rulers text-success fs-3 me-3"></i>
+                                        <div>
+                                            <small class="text-muted d-block">Beden</small>
+                                            <strong>@Model.Size</strong>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        }
+                    </div>
+                </div>
+
+                <!-- Açıklama -->
+                <div class="product-description mb-4">
+                    <h5 class="fw-bold mb-3">
+                        <i class="bi bi-file-text text-primary me-2"></i>Ürün Açıklaması
+                    </h5>
+                    <p class="text-muted lh-lg">@Model.Description</p>
+                </div>
+
+                <!-- Özellikler -->
+                <div class="product-features mb-4">
+                    <h5 class="fw-bold mb-3">
+                        <i class="bi bi-star-fill text-warning me-2"></i>Özellikler
+                    </h5>
+                    <div class="row g-2">
+                        @foreach (var feature in Model.Features)
+                        {
+                            <div class="col-md-6">
+                                <div class="feature-item d-flex align-items-center p-2 rounded-3 bg-light">
+                                    <i class="bi bi-check-circle-fill text-success me-2"></i>
+                                    <span class="small">@feature</span>
+                                </div>
+                            </div>
+                        }
+                    </div>
+                </div>
+
+                <!-- Teknik Özellikler -->
+                @if (Model.Specifications != null && Model.Specifications.Any())
+                {
+                    <div class="product-specs mb-4">
+                        <h5 class="fw-bold mb-3">
+                            <i class="bi bi-gear-fill text-info me-2"></i>Teknik Özellikler
+                        </h5>
+                        <div class="table-responsive">
+                            <table class="table table-hover">
+                                <tbody>
+                                    @foreach (var spec in Model.Specifications)
+                                    {
+                                        <tr>
+                                            <td class="fw-semibold" style="width: 40%;">@spec.Key</td>
+                                            <td>@spec.Value</td>
+                                        </tr>
+                                    }
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                }
+
+                <!-- Kullanım Alanları -->
+                @if (Model.UsageAreas != null && Model.UsageAreas.Any())
+                {
+                    <div class="usage-areas mb-4">
+                        <h5 class="fw-bold mb-3">
+                            <i class="bi bi-building text-danger me-2"></i>Kullanım Alanları
+                        </h5>
+                        <div class="d-flex flex-wrap gap-2">
+                            @foreach (var area in Model.UsageAreas)
+                            {
+                                <span class="badge bg-secondary bg-opacity-10 text-dark px-3 py-2">
+                                    <i class="bi bi-geo-alt-fill me-1"></i>@area
+                                </span>
+                            }
+                        </div>
+                    </div>
+                }
+
+                <!-- CTA Buttons -->
+                <div class="cta-buttons d-flex flex-wrap gap-3 mt-5 pt-4 border-top">
+                    <a href="~/Contact" class="btn btn-primary btn-lg flex-fill">
+                        <i class="bi bi-envelope-fill me-2"></i>Teklif İsteyin
+                    </a>
+                    <a href="~/Products" class="btn btn-outline-secondary btn-lg">
+                        <i class="bi bi-arrow-left me-2"></i>Tüm Ürünler
+                    </a>
+                </div>
+
+                <!-- Ek Bilgi Notları -->
+                <div class="additional-info mt-4">
+                    <div class="alert alert-info border-0 shadow-sm" role="alert">
+                        <div class="d-flex">
+                            <i class="bi bi-info-circle-fill fs-4 me-3"></i>
+                            <div>
+                                <strong>Toplu Alım & Özel Üretim</strong>
+                                <p class="mb-0 small mt-1">
+                                    Bu ürünümüz toplu alımlara ve private label üretime uygundur.
+                                    Kendi markanız altında üretim için bizimle iletişime geçebilirsiniz.
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+
+        <!-- Benzer Ürünler (Opsiyonel - İleride eklenebilir) -->
+        <div class="related-products mt-5 pt-5 border-top" data-aos="fade-up">
+            <h3 class="fw-bold mb-4">
+                <i class="bi bi-grid-3x3-gap-fill text-primary me-2"></i>Benzer Ürünler
+            </h3>
+            <p class="text-muted">Diğer ürünlerimizi görmek için <a href="~/Products" class="text-primary">ürün kataloğumuza</a> göz atabilirsiniz.</p>
+        </div>
+
+    </div>
+</section>
+<!-- /PRODUCT DETAIL -->
+@section Styles {
+    <style>
+        /* ===== Product Detail Styles ===== */
+        .main-image-wrapper {
+            min-height: 500px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
+            transition: all 0.3s ease;
+        }
+
+            .main-image-wrapper:hover {
+                transform: scale(1.02);
+            }
+
+        .main-product-image {
+            max-height: 450px;
+            object-fit: contain;
+            transition: transform 0.3s ease;
+        }
+
+        .main-image-wrapper:hover .main-product-image {
+            transform: scale(1.05);
+        }
+
+        .thumbnail-item {
+            cursor: pointer;
+            transition: all 0.3s ease;
+            border: 2px solid transparent;
+        }
+
+            .thumbnail-item:hover,
+            .thumbnail-item.active {
+                border-color: var(--bs-primary);
+                transform: translateY(-5px);
+                box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+            }
+
+        .info-card {
+            transition: all 0.3s ease;
+        }
+
+            .info-card:hover {
+                transform: translateY(-5px);
+                box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+            }
+
+        .feature-item {
+            transition: all 0.3s ease;
+        }
+
+            .feature-item:hover {
+                background-color: #e9ecef !important;
+                transform: translateX(5px);
+            }
+
+        .table-hover tbody tr:hover {
+            background-color: #f8f9fa;
+        }
+
+        /* ===== Responsive ===== */
+        @@media (max-width: 991px) {
+            .product-image-section
+
+        {
+            position: static !important;
+        }
+
+        .main-image-wrapper {
+            min-height: 350px;
+            padding: 2rem !important;
+        }
+
+        .main-product-image {
+            max-height: 300px;
+        }
+
+        }
+
+        @@media (max-width: 767px) {
+            .main-image-wrapper
+
+        {
+            min-height: 280px;
+            padding: 1.5rem !important;
+        }
+
+        .main-product-image {
+            max-height: 240px;
+        }
+
+        .cta-buttons .btn {
+            font-size: 0.9rem;
+        }
+
+        }
+
+        /* ===== Breadcrumb ===== */
+        .breadcrumb-item + .breadcrumb-item::before {
+            content: "›";
+            font-size: 1.2rem;
+        }
+
+        .breadcrumb-item a {
+            text-decoration: none;
+            color: var(--bs-primary);
+            transition: all 0.3s ease;
+        }
+
+            .breadcrumb-item a:hover {
+                color: var(--bs-primary);
+                text-decoration: underline;
+            }
+    </style>
+}
+
+@section Scripts {
+    <script>
+        // Thumbnail Image Change
+        function changeImage(imageSrc) {
+            document.getElementById('mainImage').src = imageSrc;
+
+            // Tüm thumbnail'lerin active class'ını kaldır
+            document.querySelectorAll('.thumbnail-item').forEach(item => {
+                item.classList.remove('active');
+            });
+
+            // Tıklanan thumbnail'e active class ekle
+            event.currentTarget.classList.add('active');
+        }
+
+        // AOS Initialize
+        document.addEventListener('DOMContentLoaded', function() {
+            if (typeof AOS !== 'undefined') {
+                AOS.init({
+                    duration: 800,
+                    once: true,
+                    offset: 100
+                });
+            }
+        });
+    </script>
+}

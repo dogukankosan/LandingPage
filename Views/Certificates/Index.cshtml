@@ -1,0 +1,523 @@
+﻿@{
+    ViewData["Title"] = "Sertifikalarımız";
+    ViewData["Description"] = "Marmara Hijyen - ISO, CE, GMP, TSE ve diğer uluslararası kalite belgeleri. Kalite güvencemizi belgeleyen sertifikalarımız.";
+    ViewData["Keywords"] = "marmara hijyen sertifikalar, iso 9001, iso 14001, ce belgesi, gmp sertifikası, tse belgesi, kalite belgeleri";
+    ViewData["ActivePage"] = "Certificates";
+}
+
+<br />
+<br />
+<br />
+<br />
+<br />
+
+<!-- ==================== PAGE TITLE ==================== -->
+<section class="page-title light-background py-5">
+    <div class="container">
+        <div class="row align-items-center">
+            <div class="col-lg-8">
+                <h1 class="display-5 fw-bold mb-3" data-aos="fade-right" data-aos-delay="100">
+                    <i class="bi bi-award text-primary me-3"></i>Sertifikalarımız
+                </h1>
+                <p class="lead text-muted mb-0" data-aos="fade-right" data-aos-delay="150">
+                    Uluslararası kalite standartlarına uygunluğumuzu belgeleyen sertifikalarımız
+                </p>
+            </div>
+            <div class="col-lg-4 text-lg-end mt-4 mt-lg-0" data-aos="fade-left">
+                <a href="~/Contact" class="btn btn-primary btn-lg">
+                    <i class="bi bi-envelope me-2"></i>İletişime Geçin
+                </a>
+            </div>
+        </div>
+    </div>
+</section>
+<!-- /PAGE TITLE -->
+<!-- ==================== CERTIFICATES INTRO ==================== -->
+<section class="certificates-intro py-5">
+    <div class="container">
+        <div class="row justify-content-center">
+            <div class="col-lg-8 text-center" data-aos="fade-up">
+                <span class="badge bg-primary bg-opacity-10 text-primary px-3 py-2 rounded-pill mb-3">
+                    <i class="bi bi-patch-check me-1"></i> Kalite Güvencesi
+                </span>
+                <h2 class="display-6 fw-bold mb-4">Kalitemizi Belgeliyoruz</h2>
+                <p class="text-muted lead mb-0">
+                    Marmara Hijyen olarak üretim süreçlerimizde en yüksek kalite standartlarını uyguluyoruz.
+                    <strong>ISO, CE, GMP ve TSE</strong> gibi uluslararası sertifikalarımız, ürünlerimizin
+                    güvenilirliğini ve kalitesini tescillemektedir.
+                </p>
+            </div>
+        </div>
+    </div>
+</section>
+<!-- /CERTIFICATES INTRO -->
+<!-- ==================== CERTIFICATES GRID ==================== -->
+<section class="certificates-grid py-5 light-background">
+    <div class="container">
+
+        <!-- Başlık -->
+        <div class="text-center mb-5" data-aos="fade-up">
+            <h3 class="fw-bold mb-3">Belgelerimiz</h3>
+            <p class="text-muted">Sertifikalarımızı görüntülemek için tıklayın</p>
+        </div>
+
+        <!-- Certificates Gallery -->
+        <div class="row g-4">
+
+            @for (int i = 1; i <= 11; i++)
+            {
+                string certName = "";
+                string certType = "";
+
+                if (i == 1)
+                {
+                    certName = "Bilgi Güvenliği Yönetim Sistemi";
+                    certType = "ISO 27001:2022";
+                }
+                else if (i == 2)
+                {
+                    certType = "TS EN ISO 50001:2018";
+                    certName = "Enejeri Yönetim Sistemi";
+                }
+                else if (i == 3)
+                {
+                    certType = "ISO 45001:2018";
+                    certName = "İş Sağlığı ve Güvenliği Sistemi Yönetimi";
+                }
+                else if (i == 4)
+                {
+                    certType = "ISO 22716:2013 GMP";
+                    certName = "İyi Üretim Uygulamaları";
+                }
+                else if (i == 5)
+                {
+                    certType = "ISO 9001:14001";
+                    certName = "Uygunluk Beyanı";
+                }
+                else if (i == 6)
+                {
+                    certType = "ISO 45001:2018";
+                    certName = "İş Sağlığı ve Güvenliği Yönetim Sistemi";
+                }
+                else if (i == 7)
+                {
+                    certType = "ISO 31000";
+                    certName = "Risk Yönetimi Sistemi";
+                }
+                else if (i == 8)
+                {
+                    certType = "ISO 14001:2015";
+                    certName = "Çevre Yönetimi Sistemi";
+                }
+                else if (i == 9)
+                {
+                    certType = "ISO 9001:2015";
+                    certName = "Kalite Yönetim Sistemi";
+                }
+                else if (i == 10)
+                {
+                    certType = "ISO 10002:2018";
+                    certName = "Müşteri Memnuniyet Yönetim Sistemi";
+                }
+                else if (i == 11)
+                {
+                    certType = "TS EN ISO 13485:2016";
+                    certName = "Tıbbi Cihazlar Yönetim Sistemi";
+                }
+
+                <div class="col-6 col-md-4 col-lg-3" data-aos="zoom-in" data-aos-delay="@((i - 1) * 50)">
+                    <div class="certificate-item">
+                        <a href="~/Certificates/@(i).png"
+                           class="glightbox"
+                           data-gallery="certificates-gallery"
+                           data-glightbox="title: @certName; description: @certType">
+                            <div class="certificate-card">
+                                <div class="certificate-image">
+                                    <img src="~/Certificates/@(i).png"
+                                         alt="@certName - @certType"
+                                         class="img-fluid"
+                                         loading="lazy">
+                                    <div class="certificate-overlay">
+                                        <i class="bi bi-zoom-in fs-1"></i>
+                                        <p class="mt-2 mb-0">Görüntüle</p>
+                                    </div>
+                                </div>
+                                <div class="certificate-footer">
+                                    <h6 class="mb-0 fw-bold">@certName</h6>
+                                    <small class="text-muted">@certType</small>
+                                </div>
+                            </div>
+                        </a>
+                    </div>
+                </div>
+            }
+
+        </div>
+    </div>
+</section>
+<!-- /CERTIFICATES GRID -->
+<!-- ==================== CERTIFICATE TYPES ==================== -->
+<section class="certificate-types py-5">
+    <div class="container">
+
+        <div class="text-center mb-5" data-aos="fade-up">
+            <span class="badge bg-success bg-opacity-10 text-success px-3 py-2 rounded-pill mb-3">
+                <i class="bi bi-shield-check me-1"></i> Standartlarımız
+            </span>
+            <h3 class="fw-bold">Sahip Olduğumuz Belgeler</h3>
+        </div>
+
+        <div class="row g-4">
+
+            <!-- ISO 9001 -->
+            <div class="col-lg-6" data-aos="fade-up" data-aos-delay="100">
+                <div class="card h-100 border-0 shadow-sm certificate-type-card">
+                    <div class="card-body p-4">
+                        <div class="d-flex align-items-start">
+                            <div class="icon-box bg-primary bg-opacity-10 rounded-circle d-flex align-items-center justify-content-center flex-shrink-0 me-4"
+                                 style="width: 70px; height: 70px;">
+                                <i class="bi bi-patch-check-fill text-primary fs-2"></i>
+                            </div>
+                            <div>
+                                <h5 class="fw-bold mb-2">ISO 9001:2015</h5>
+                                <span class="badge bg-primary bg-opacity-10 text-primary mb-3">Kalite Yönetim Sistemi</span>
+                                <p class="text-muted mb-0">
+                                    Kalite yönetim sistemimiz uluslararası standartlara uygun olarak işletilmektedir.
+                                    Müşteri memnuniyeti ve sürekli iyileştirme odaklı çalışıyoruz.
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- ISO 14001 -->
+            <div class="col-lg-6" data-aos="fade-up" data-aos-delay="150">
+                <div class="card h-100 border-0 shadow-sm certificate-type-card">
+                    <div class="card-body p-4">
+                        <div class="d-flex align-items-start">
+                            <div class="icon-box bg-success bg-opacity-10 rounded-circle d-flex align-items-center justify-content-center flex-shrink-0 me-4"
+                                 style="width: 70px; height: 70px;">
+                                <i class="bi bi-patch-check-fill text-success fs-2"></i>
+                            </div>
+                            <div>
+                                <h5 class="fw-bold mb-2">ISO 14001:2015</h5>
+                                <span class="badge bg-success bg-opacity-10 text-success mb-3">Çevre Yönetim Sistemi</span>
+                                <p class="text-muted mb-0">
+                                    Üretim süreçlerimizde çevreye duyarlı yaklaşımlar benimsiyoruz.
+                                    Sürdürülebilir üretim ve çevre koruma önceliğimizdir.
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- CE -->
+            <div class="col-lg-6" data-aos="fade-up" data-aos-delay="200">
+                <div class="card h-100 border-0 shadow-sm certificate-type-card">
+                    <div class="card-body p-4">
+                        <div class="d-flex align-items-start">
+                            <div class="icon-box bg-info bg-opacity-10 rounded-circle d-flex align-items-center justify-content-center flex-shrink-0 me-4"
+                                 style="width: 70px; height: 70px;">
+                                <i class="bi bi-patch-check-fill text-info fs-2"></i>
+                            </div>
+                            <div>
+                                <h5 class="fw-bold mb-2">CE Belgesi</h5>
+                                <span class="badge bg-info bg-opacity-10 text-info mb-3">Avrupa Uygunluk</span>
+                                <p class="text-muted mb-0">
+                                    Ürünlerimiz Avrupa Birliği standartlarına uygun olarak üretilmektedir.
+                                    CE belgesi ile AB pazarlarına erişim sağlıyoruz.
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- GMP -->
+            <div class="col-lg-6" data-aos="fade-up" data-aos-delay="250">
+                <div class="card h-100 border-0 shadow-sm certificate-type-card">
+                    <div class="card-body p-4">
+                        <div class="d-flex align-items-start">
+                            <div class="icon-box bg-warning bg-opacity-10 rounded-circle d-flex align-items-center justify-content-center flex-shrink-0 me-4"
+                                 style="width: 70px; height: 70px;">
+                                <i class="bi bi-patch-check-fill text-warning fs-2"></i>
+                            </div>
+                            <div>
+                                <h5 class="fw-bold mb-2">GMP Sertifikası</h5>
+                                <span class="badge bg-warning bg-opacity-10 text-warning mb-3">İyi Üretim Uygulamaları</span>
+                                <p class="text-muted mb-0">
+                                    İyi Üretim Uygulamaları (Good Manufacturing Practice) prensiplerine uygun üretim yapıyoruz.
+                                    Hijyen ve kalite kontrol süreçlerimiz düzenli olarak denetlenmektedir.
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- TSE -->
+            <div class="col-lg-6" data-aos="fade-up" data-aos-delay="300">
+                <div class="card h-100 border-0 shadow-sm certificate-type-card">
+                    <div class="card-body p-4">
+                        <div class="d-flex align-items-start">
+                            <div class="icon-box bg-danger bg-opacity-10 rounded-circle d-flex align-items-center justify-content-center flex-shrink-0 me-4"
+                                 style="width: 70px; height: 70px;">
+                                <i class="bi bi-patch-check-fill text-danger fs-2"></i>
+                            </div>
+                            <div>
+                                <h5 class="fw-bold mb-2">TSE Belgesi</h5>
+                                <span class="badge bg-danger bg-opacity-10 text-danger mb-3">Türk Standartları Enstitüsü</span>
+                                <p class="text-muted mb-0">
+                                    Ürünlerimiz Türk Standartları Enstitüsü tarafından belgelendirilmiştir.
+                                    Ulusal standartlara tam uyum sağlıyoruz.
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- FDA -->
+            <div class="col-lg-6" data-aos="fade-up" data-aos-delay="350">
+                <div class="card h-100 border-0 shadow-sm certificate-type-card">
+                    <div class="card-body p-4">
+                        <div class="d-flex align-items-start">
+                            <div class="icon-box bg-secondary bg-opacity-10 rounded-circle d-flex align-items-center justify-content-center flex-shrink-0 me-4"
+                                 style="width: 70px; height: 70px;">
+                                <i class="bi bi-patch-check-fill text-secondary fs-2"></i>
+                            </div>
+                            <div>
+                                <h5 class="fw-bold mb-2">FDA Uygunluk</h5>
+                                <span class="badge bg-secondary bg-opacity-10 text-secondary mb-3">ABD Standartları</span>
+                                <p class="text-muted mb-0">
+                                    Üretim tesislerimiz ve ürünlerimiz FDA (Food and Drug Administration) standartlarına uygun olarak işletilmektedir.
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </div>
+</section>
+<!-- /CERTIFICATE TYPES -->
+<!-- ==================== WHY CERTIFICATES MATTER ==================== -->
+<section class="why-certificates py-5 light-background">
+    <div class="container">
+        <div class="row align-items-center">
+
+            <!-- Sol - İçerik -->
+            <div class="col-lg-6 mb-5 mb-lg-0" data-aos="fade-right">
+                <span class="badge bg-primary bg-opacity-10 text-primary px-3 py-2 rounded-pill mb-3">
+                    <i class="bi bi-question-circle me-1"></i> Neden Önemli?
+                </span>
+                <h2 class="display-6 fw-bold mb-4">Sertifikalar Neden Önemlidir?</h2>
+
+                <div class="mb-4">
+                    <div class="d-flex mb-3">
+                        <div class="flex-shrink-0">
+                            <i class="bi bi-check-circle-fill text-success fs-4 me-3"></i>
+                        </div>
+                        <div>
+                            <h5 class="fw-bold mb-2">Kalite Güvencesi</h5>
+                            <p class="text-muted mb-0">
+                                Sertifikalar, ürünlerimizin belirlenen kalite standartlarına uygun olduğunu garantiler.
+                            </p>
+                        </div>
+                    </div>
+
+                    <div class="d-flex mb-3">
+                        <div class="flex-shrink-0">
+                            <i class="bi bi-check-circle-fill text-success fs-4 me-3"></i>
+                        </div>
+                        <div>
+                            <h5 class="fw-bold mb-2">Güvenilirlik</h5>
+                            <p class="text-muted mb-0">
+                                Bağımsız kuruluşlar tarafından denetlenen süreçlerimiz, müşterilerimize güven verir.
+                            </p>
+                        </div>
+                    </div>
+
+                    <div class="d-flex mb-3">
+                        <div class="flex-shrink-0">
+                            <i class="bi bi-check-circle-fill text-success fs-4 me-3"></i>
+                        </div>
+                        <div>
+                            <h5 class="fw-bold mb-2">Global Pazar Erişimi</h5>
+                            <p class="text-muted mb-0">
+                                Uluslararası sertifikalar sayesinde dünya çapında iş ortaklarıyla çalışabiliyoruz.
+                            </p>
+                        </div>
+                    </div>
+
+                    <div class="d-flex">
+                        <div class="flex-shrink-0">
+                            <i class="bi bi-check-circle-fill text-success fs-4 me-3"></i>
+                        </div>
+                        <div>
+                            <h5 class="fw-bold mb-2">Sürekli İyileştirme</h5>
+                            <p class="text-muted mb-0">
+                                Sertifikasyon süreçleri, operasyonlarımızı sürekli olarak geliştirmemizi sağlar.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Sağ - Görsel -->
+            <div class="col-lg-6" data-aos="fade-left">
+                <div class="position-relative">
+                    <img src="~/Certificates/cer.jpg"
+                         alt="Marmara Hijyen Kalite Kontrol"
+                         class="img-fluid rounded-4 shadow-lg">
+
+                </div>
+            </div>
+
+        </div>
+    </div>
+</section>
+<!-- /WHY CERTIFICATES MATTER -->
+<!-- ==================== CTA SECTION ==================== -->
+<section class="cta-section py-5">
+    <div class="container">
+        <div class="card bg-primary text-white border-0 shadow-lg" data-aos="fade-up">
+            <div class="card-body p-5">
+                <div class="row align-items-center">
+                    <div class="col-lg-8 mb-4 mb-lg-0">
+                        <h3 class="fw-bold mb-2">
+                            <i class="bi bi-file-earmark-pdf me-2"></i>Sertifikalarımızı İndirin
+                        </h3>
+                        <p class="mb-0 opacity-90">
+                            Tüm kalite belgelerimizi detaylı incelemek ve PDF olarak indirmek için bizimle iletişime geçin.
+                        </p>
+                    </div>
+                    <div class="col-lg-4 text-lg-end">
+                        <div class="d-flex flex-column flex-sm-row gap-3 justify-content-lg-end">
+                            <a href="~/Contact" class="btn btn-light btn-lg">
+                                <i class="bi bi-envelope me-2"></i>İletişime Geçin
+                            </a>
+                            <a href="tel:+905337270293" class="btn btn-outline-light btn-lg">
+                                <i class="bi bi-telephone me-2"></i>Arayın
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+<!-- /CTA SECTION -->
+@section Styles {
+    <style>
+        /* Certificate Cards */
+        .certificate-item {
+            height: 100%;
+        }
+
+        .certificate-card {
+            background: #fff;
+            border-radius: 12px;
+            overflow: hidden;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.08);
+            transition: all 0.3s ease;
+            height: 100%;
+            display: flex;
+            flex-direction: column;
+        }
+
+            .certificate-card:hover {
+                transform: translateY(-8px);
+                box-shadow: 0 12px 30px rgba(0,0,0,0.15);
+            }
+
+        .certificate-image {
+            position: relative;
+            overflow: hidden;
+            background: #f8f9fa;
+            aspect-ratio: 3/4;
+        }
+
+            .certificate-image img {
+                width: 100%;
+                height: 100%;
+                object-fit: cover;
+                transition: transform 0.3s ease;
+            }
+
+        .certificate-card:hover .certificate-image img {
+            transform: scale(1.1);
+        }
+
+        .certificate-overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(59, 130, 246, 0.95);
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            opacity: 0;
+            transition: opacity 0.3s ease;
+        }
+
+        .certificate-card:hover .certificate-overlay {
+            opacity: 0.6;
+        }
+
+        .certificate-footer {
+            padding: 1rem;
+            text-align: center;
+            border-top: 1px solid #e9ecef;
+        }
+
+        /* Certificate Type Cards */
+        .certificate-type-card {
+            transition: all 0.3s ease;
+            border-left: 4px solid transparent !important;
+        }
+
+            .certificate-type-card:hover {
+                transform: translateY(-5px);
+                border-left-color: var(--bs-primary) !important;
+            }
+
+        /* Icon Box Animation */
+        .icon-box {
+            transition: transform 0.3s ease;
+        }
+
+        .certificate-type-card:hover .icon-box {
+            transform: scale(1.1) rotate(5deg);
+        }
+
+        /* GLightbox Custom */
+        .glightbox-clean .gslide-description {
+            background: #fff;
+        }
+    </style>
+}
+
+@section Scripts {
+    <script>
+        // GLightbox initialization
+        document.addEventListener('DOMContentLoaded', function() {
+            const lightbox = GLightbox({
+                touchNavigation: true,
+                loop: true,
+                autoplayVideos: true,
+                closeButton: true,
+                zoomable: true,
+                draggable: true,
+                closeOnOutsideClick: true
+            });
+        });
+    </script>
+}

@@ -131,7 +131,42 @@ cleanPath = cleanPath.StartsWith("/") ? cleanPath : "/" + cleanPath;
 
     <!-- Main CSS File -->
     <link href="~/Thema/assets/css/main.css" rel="stylesheet">
-
+<style>
+    /* Görsel koruma CSS */
+    img {
+        -webkit-user-select: none;
+        -moz-user-select: none;
+        -ms-user-select: none;
+        user-select: none;
+        -webkit-user-drag: none;
+        -webkit-touch-callout: none;
+        pointer-events: none;
+    }
+   
+    /* Yazdırma engeli */
+    @@media print {
+        body {
+            display: none !important;
+        }
+    }
+    
+    /* Metin seçilebilir olsun ama görseller değil */
+    body {
+        -webkit-user-select: text;
+        -moz-user-select: text;
+        -ms-user-select: text;
+        user-select: text;
+    }
+    
+    /* Form elemanları normal çalışsın */
+    input, textarea, select, button, a {
+        -webkit-user-select: text !important;
+        -moz-user-select: text !important;
+        -ms-user-select: text !important;
+        user-select: text !important;
+        pointer-events: auto !important;
+    }
+</style>
     <!-- Custom Styles -->
     <style>
         /* ===== Selection Rengi ===== */
@@ -582,13 +617,13 @@ cleanPath = cleanPath.StartsWith("/") ? cleanPath : "/" + cleanPath;
   },
   ""contactPoint"": {
     ""@type"": ""ContactPoint"",
-    ""telephone"": ""+90-212-690-00-01"",
+    ""telephone"": ""+90-533-727-26-93"",
     ""contactType"": ""customer service"",
     ""availableLanguage"": [""Turkish"", ""English"", ""Chinese"", ""Russian"", ""Arabic""]
   },
   ""sameAs"": [
     ""https://www.facebook.com/marmarahijyen"",
-    ""https://www.instagram.com/marmarahijyen"",
+    ""https://www.instagram.com/marmarahygiene"",
     ""https://www.linkedin.com/company/marmarahijyen""
   ]
 }")
@@ -611,7 +646,7 @@ cleanPath = cleanPath.StartsWith("/") ? cleanPath : "/" + cleanPath;
                         <a href="mailto:info@marmarahijyen.com">info@marmarahijyen.com</a>
                     </i>
                     <i class="bi bi-phone d-flex align-items-center ms-4">
-                        <a href="tel:+902126900001">+90 212 690 00 01</a>
+                        <a href="tel:+905337270293">+90 533 727 02 93</a>
                     </i>
                 </div>
 
@@ -634,7 +669,7 @@ cleanPath = cleanPath.StartsWith("/") ? cleanPath : "/" + cleanPath;
                     <!-- Sosyal Medya -->
                     <div class="social-links d-flex align-items-center gap-2">
                         <a href="#!" aria-label="Facebook"><i class="bi bi-facebook"></i></a>
-                        <a href="#!" aria-label="Instagram"><i class="bi bi-instagram"></i></a>
+                        <a target="_blank" href="https://www.instagram.com/marmarahygiene" aria-label="Instagram"><i class="bi bi-instagram"></i></a>
                         <a href="#!" aria-label="LinkedIn"><i class="bi bi-linkedin"></i></a>
                     </div>
                 </div>
@@ -662,6 +697,9 @@ cleanPath = cleanPath.StartsWith("/") ? cleanPath : "/" + cleanPath;
                             <a href="~/Products" class="@(ViewData["ActivePage"]?.ToString() == "Products" ? "active" : "")">
                                 <span>Ürünlerimiz</span>
                             </a>
+                        </li>
+                        <li>
+                            <a href="~/Certificates" class="@(ViewData["ActivePage"]?.ToString() == "Certificates" ? "active" : "")">Sertifikalar</a>
                         </li>
                         <li>
                             <a href="~/Contact" class="@(ViewData["ActivePage"]?.ToString() == "Contact" ? "active" : "")">İletişim</a>
@@ -706,7 +744,7 @@ cleanPath = cleanPath.StartsWith("/") ? cleanPath : "/" + cleanPath;
                                class="d-flex align-items-center justify-content-center rounded-circle text-decoration-none">
                                 <i class="bi bi-facebook"></i>
                             </a>
-                            <a href="#!" style="width:38px;height:38px;background:#e0ecff;color:#1e40af;"
+                            <a href="https://www.instagram.com/marmarahygiene" target="_blank" style="width:38px;height:38px;background:#e0ecff;color:#1e40af;"
                                class="d-flex align-items-center justify-content-center rounded-circle text-decoration-none">
                                 <i class="bi bi-instagram"></i>
                             </a>
@@ -714,20 +752,22 @@ cleanPath = cleanPath.StartsWith("/") ? cleanPath : "/" + cleanPath;
                                class="d-flex align-items-center justify-content-center rounded-circle text-decoration-none">
                                 <i class="bi bi-linkedin"></i>
                             </a>
-                            <a href="#!" style="width:38px;height:38px;background:#e0ecff;color:#1e40af;"
-                               class="d-flex align-items-center justify-content-center rounded-circle text-decoration-none">
-                                <i class="bi bi-whatsapp"></i>
-                            </a>
+                        <a href="https://wa.me/905337270293" 
+   target="_blank"
+   style="width:38px;height:38px;background:#e0ecff;color:#1e40af;"
+   class="d-flex align-items-center justify-content-center rounded-circle text-decoration-none">
+    <i class="bi bi-whatsapp"></i>
+</a>
                         </div>
                     </div>
                 </div>
 
-   
+                <!-- Kurumsal -->
                 <div class="col-lg-2 col-md-6">
 
                 </div>
 
-
+                <!-- Markalarımız -->
                 <div class="col-lg-2 col-md-6">
 
                 </div>
@@ -746,7 +786,7 @@ cleanPath = cleanPath.StartsWith("/") ? cleanPath : "/" + cleanPath;
                         </li>
                         <li class="d-flex mb-3">
                             <i class="bi bi-telephone me-3 mt-1" style="color:#2563eb;"></i>
-                            <a href="tel:+902126900001" style="color:#1d4ed8;">+90 212 690 00 01</a>
+                            <a href="tel:+905337270293" style="color:#1d4ed8;">+90 533 727 02 93</a>
                         </li>
                         <li class="d-flex mb-3">
                             <i class="bi bi-envelope me-3 mt-1" style="color:#2563eb;"></i>
@@ -795,7 +835,247 @@ cleanPath = cleanPath.StartsWith("/") ? cleanPath : "/" + cleanPath;
 
     <!-- Preloader -->
     <div id="preloader"></div>
+    <script>
+    // ========================================
+    // GÖRSEL KORUMA SİSTEMİ (Optimize Edilmiş)
+    // ========================================
+    
+    (function() {
+        'use strict';
 
+        // 1. SAĞ TIKLAMA ENGELİ
+        document.addEventListener('contextmenu', function(e) {
+            e.preventDefault();
+            return false;
+        }, false);
+
+        // 2. F12 ve GELİŞTİRİCİ ARAÇLARI ENGELİ
+        document.addEventListener('keydown', function(e) {
+            // F12
+            if (e.keyCode === 123) {
+                e.preventDefault();
+                return false;
+            }
+            // Ctrl+Shift+I
+            if (e.ctrlKey && e.shiftKey && e.keyCode === 73) {
+                e.preventDefault();
+                return false;
+            }
+            // Ctrl+Shift+J
+            if (e.ctrlKey && e.shiftKey && e.keyCode === 74) {
+                e.preventDefault();
+                return false;
+            }
+            // Ctrl+Shift+C
+            if (e.ctrlKey && e.shiftKey && e.keyCode === 67) {
+                e.preventDefault();
+                return false;
+            }
+            // Ctrl+U
+            if (e.ctrlKey && e.keyCode === 85) {
+                e.preventDefault();
+                return false;
+            }
+            // Ctrl+S
+            if (e.ctrlKey && e.keyCode === 83) {
+                e.preventDefault();
+                return false;
+            }
+        }, false);
+
+        // 3. GÖRSEL SÜRÜKLE-BIRAK ENGELİ
+        document.addEventListener('dragstart', function(e) {
+            if (e.target.tagName === 'IMG') {
+                e.preventDefault();
+                return false;
+            }
+        }, false);
+
+        // 4. TÜM GÖRSELLERİ KORUMA
+        function protectImages() {
+            const images = document.querySelectorAll('img');
+            
+            images.forEach(function(img) {
+                // Sürükle-bırak engeli
+                img.setAttribute('draggable', 'false');
+                
+                // Seçim engeli
+                img.style.userSelect = 'none';
+                img.style.webkitUserSelect = 'none';
+                img.style.mozUserSelect = 'none';
+                img.style.msUserSelect = 'none';
+                
+                // Pointer events - sadece img için
+                img.style.pointerEvents = 'none';
+                
+                // Sağ tık özel engeli
+                img.oncontextmenu = function(e) {
+                    e.preventDefault();
+                    return false;
+                };
+                
+                // Mouse down engeli
+                img.onmousedown = function(e) {
+                    e.preventDefault();
+                    return false;
+                };
+                
+                // Seçim engeli
+                img.onselectstart = function(e) {
+                    e.preventDefault();
+                    return false;
+                };
+            });
+        }
+
+        // 5. ARKA PLAN GÖRSELLERİNİ KORUMA
+        function protectBackgroundImages() {
+            const elements = document.querySelectorAll('[style*="background-image"]');
+            
+            elements.forEach(function(el) {
+                el.style.userSelect = 'none';
+                el.style.webkitUserSelect = 'none';
+                el.oncontextmenu = function(e) {
+                    e.preventDefault();
+                    return false;
+                };
+            });
+        }
+
+        // 6. KOPYALAMA VE YAZDIRMA ENGELİ
+        document.addEventListener('copy', function(e) {
+            const selection = window.getSelection().toString();
+            if (selection.length > 0) {
+                e.preventDefault();
+                return false;
+            }
+        }, false);
+
+        document.addEventListener('cut', function(e) {
+            e.preventDefault();
+            return false;
+        }, false);
+
+        // Yazdırma engeli
+        window.onbeforeprint = function() {
+            document.body.style.display = 'none';
+        };
+        
+        window.onafterprint = function() {
+            document.body.style.display = 'block';
+        };
+
+        // 7. SEÇİM ENGELİ (Sadece görseller için)
+        document.addEventListener('selectstart', function(e) {
+            if (e.target.tagName === 'IMG') {
+                e.preventDefault();
+                return false;
+            }
+        }, false);
+
+        // 8. GÖRSEL ÜZERİNDE SAYDAM KATMAN
+        function addProtectionLayer() {
+            const images = document.querySelectorAll('img:not([data-protected])');
+            
+            images.forEach(function(img) {
+                // Zaten korunmuşsa atla
+                if (img.hasAttribute('data-protected')) return;
+                
+                img.setAttribute('data-protected', 'true');
+                
+                const wrapper = document.createElement('div');
+                wrapper.style.position = 'relative';
+                wrapper.style.display = 'inline-block';
+                wrapper.style.lineHeight = '0';
+                
+                const overlay = document.createElement('div');
+                overlay.style.position = 'absolute';
+                overlay.style.top = '0';
+                overlay.style.left = '0';
+                overlay.style.width = '100%';
+                overlay.style.height = '100%';
+                overlay.style.zIndex = '999';
+                overlay.style.cursor = 'default';
+                overlay.style.backgroundColor = 'transparent';
+                
+                // Overlay'e de koruma ekle
+                overlay.oncontextmenu = function(e) {
+                    e.preventDefault();
+                    return false;
+                };
+                
+                if (img.parentNode) {
+                    img.parentNode.insertBefore(wrapper, img);
+                    wrapper.appendChild(img);
+                    wrapper.appendChild(overlay);
+                }
+            });
+        }
+
+        // 9. CONSOLE MESAJLARINI TEMİZLE
+        function clearConsole() {
+            console.clear();
+            console.log = function() {};
+            console.warn = function() {};
+            console.error = function() {};
+            console.info = function() {};
+        }
+
+        // 10. DEV TOOLS KONTROLÜ (Basitleştirilmiş - Stack Overflow Yok)
+        let devToolsOpen = false;
+        const threshold = 160;
+        
+        setInterval(function() {
+            if (window.outerWidth - window.innerWidth > threshold || 
+                window.outerHeight - window.innerHeight > threshold) {
+                if (!devToolsOpen) {
+                    devToolsOpen = true;
+                    console.log('Developer tools açık görünüyor.');
+                }
+            } else {
+                devToolsOpen = false;
+            }
+        }, 500);
+
+        // TÜM KORUMA FONKSİYONLARINI BAŞLAT
+        function initProtection() {
+            protectImages();
+            protectBackgroundImages();
+            addProtectionLayer();
+            clearConsole();
+        }
+
+        // Sayfa yüklendiğinde
+        if (document.readyState === 'loading') {
+            document.addEventListener('DOMContentLoaded', initProtection);
+        } else {
+            initProtection();
+        }
+
+        // Dinamik içerik için MutationObserver (Throttled)
+        let observerTimeout;
+        const observer = new MutationObserver(function(mutations) {
+            clearTimeout(observerTimeout);
+            observerTimeout = setTimeout(function() {
+                protectImages();
+                addProtectionLayer();
+            }, 100);
+        });
+        
+        observer.observe(document.body, {
+            childList: true,
+            subtree: true
+        });
+
+        // Window visibility kontrolü
+        document.addEventListener('visibilitychange', function() {
+            if (!document.hidden) {
+                clearConsole();
+            }
+        });
+
+    })();
+</script>
     <!-- Vendor JS Files -->
     <script src="~/Thema/assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
     <script src="~/Thema/assets/vendor/aos/aos.js"></script>
