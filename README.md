@@ -1,6 +1,7 @@
 # 🏢 Marmara Hijyen - Kurumsal Web Sitesi
 
-<img width="1601" height="896" alt="Screenshot_1" src="https://github.com/user-attachments/assets/4a49357d-89d8-4f75-ab70-843c110a8ce6" />
+<img width="1355" height="914" alt="LOGO" src="https://github.com/user-attachments/assets/a46be09f-28bd-43e9-8b42-e437e22f83a1" />
+
 
 
 ![.NET](https://img.shields.io/badge/.NET-8.0-512BD4?logo=dotnet)
